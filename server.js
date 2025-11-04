@@ -1140,6 +1140,10 @@ app.get('/api/sprint-top', async (req, res) => {
     const limit = Math.max(1, Number(req.query.limit || 20));
     if (!from || !to) return res.status(400).json({ error:'missing-params', message:'from & to required' });
 
+    const fallbackMinh = Math.max(4, Math.floor(minh / 2));
+    const baseThresholdSec = minh * 3600;
+    const fallbackThresholdSec = fallbackMinh < minh ? fallbackMinh * 3600 : baseThresholdSec;
+
     // KLUCZ CACHE z wersją danych oraz zakresem
     const cacheKey = JSON.stringify({ from, to, minh, limit, v: DATA_VERSION });
     if (sprintTopCache.has(cacheKey)) {
@@ -1159,6 +1163,7 @@ app.get('/api/sprint-top', async (req, res) => {
     }
 
     const results = [];
+    let fallbackTeams = 0;
     for (const fp of filesToUse){
       const { team_label, team_name, source_file } = teamInfoFromFilename(fp);
       const rows = await readCsvObjects(fp);
@@ -1182,8 +1187,8 @@ app.get('/api/sprint-top', async (req, res) => {
         agg.get(issueKey).seconds += sec;
       }
 
-      const items = Array.from(agg.values())
-        .filter(x => hoursFromSeconds(x.seconds) >= minh)
+      const buildItems = (thresholdSeconds) => Array.from(agg.values())
+        .filter(x => x.seconds >= thresholdSeconds)
         .sort((a,b) => b.seconds - a.seconds)
         .slice(0, limit)
         .map(x => ({
@@ -1194,8 +1199,27 @@ app.get('/api/sprint-top', async (req, res) => {
           url: `/redirect?key=${encodeURIComponent(x.issue_key)}`
         }));
 
+      let appliedThreshold = baseThresholdSec;
+      let items = buildItems(baseThresholdSec);
+
+      if (!items.length && fallbackThresholdSec < baseThresholdSec){
+        const fallbackItems = buildItems(fallbackThresholdSec);
+        if (fallbackItems.length){
+          items = fallbackItems;
+          appliedThreshold = fallbackThresholdSec;
+          fallbackTeams++;
+        }
+      }
+
       if (items.length){
-        results.push({ team_label, team_name, source_file, items });
+        results.push({
+          team_label,
+          team_name,
+          source_file,
+          items,
+          min_hours_used: Math.round(appliedThreshold / 3600),
+          fallback_applied: appliedThreshold !== baseThresholdSec
+        });
       }
     }
 
@@ -1209,6 +1233,8 @@ app.get('/api/sprint-top', async (req, res) => {
       minh,
       limit,
       results,
+      fallback_min: fallbackMinh,
+      teams_with_fallback: fallbackTeams,
       version: DATA_VERSION
     };
 

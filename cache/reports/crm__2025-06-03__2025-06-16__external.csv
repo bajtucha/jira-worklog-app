@@ -1,0 +1,397 @@
+worklog_id,issue_key,issue_summary,issue_type,priority,status,assignee_email,epic_key,sprint,author_email,author_account_id,time_spent_seconds,started,comment,issue_description
+f554f2b60a4f3dd6e61f3ef7c79b3dc38d4a2246,GC-10306,[BE-front] Add animation label for loyalty exclusive offers,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Adrian Karaś,7200,2025-03-06T06:15:00.000Z,,
+fe1b7430a97dfcdee6af263eb699d3574b920cdc,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Adrian Karaś,7200,2025-03-06T11:37:00.000Z,planning,
+da20a9290622d38b9dc592dd4db650631baaaabc,GC-10306,[BE-front] Add animation label for loyalty exclusive offers,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Adrian Karaś,5400,2025-03-06T12:08:00.000Z,,
+fd483f8ac7bb7f820c160e6679464714e875ae26,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,Adrian Karaś,1800,2025-03-06T13:07:00.000Z,,
+c101969d689f6bed86a9f6f4187c59ad501486d6,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Adrian Karaś,10800,2025-05-06T03:31:00.000Z,"daily 1h,
+
+retro 1h,
+
+micro 1h",
+891721caf0184daf21e65e6cbe9b830df36c5a58,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,Adrian Karaś,1800,2025-05-06T06:00:00.000Z,,
+3b30b5a1dfd3f0285ed559cbbb91ecac3f321f81,GC-10027,[Upper6/frontend] Handle Points reservations/cancellation process (21),Sub-task,None,In Progress,,,CRM 2.5 2025 - Team Loyalty CRM 1.1 2025 - Team Loyalty CRM 4.4 2025 - Team Loyalty,,Adrian Karaś,14400,2025-06-06T09:16:00.000Z,,
+c9c9cab93e4f5c94e7e5c56b20c44ee2e17a0bdf,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Adrian Karaś,7200,2025-06-06T11:15:00.000Z,"daily 1h,
+
+kawka 1h",
+cfe8f5418d5bad94ec1708233cfa7477693c6202,GC-10388,[BE7-front] Refactor processing marketing consents to meet requirements,Sub-task,None,To Test,,,CRM 2.5 2025 - Team Loyalty CRM 3.4 2025 - Team Loyalty CRM 3.3 2025 - Team Loyalty CRM 3.2 2025 - Team Loyalty CRM 4.4 2025 - Team Loyalty CRM 3.5 2025 - Team Loyalty,,Adrian Karaś,14400,2025-09-06T01:45:00.000Z,,
+0d93e1aa01946dbb87250c1a2cb3c87098fb4c68,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Adrian Karaś,4500,2025-09-06T04:30:00.000Z,"daily 45m,
+
+monthly 30m",
+f31ec28b867a4e21d17f37382bb232f2e1975085,WORKLOG-5,Education/Personal Development,Worklog,Medium,Open,,,No sprint,,Adrian Karaś,7200,2025-10-06T07:32:00.000Z,,
+340c444736f8583cb57b3fd71135117ed3aec92d,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Adrian Karaś,2700,2025-10-06T08:47:00.000Z,daily,
+ba1cb0c3a79d8378f5933a43199b3fbd725ecae9,GC-10417,[Suite] Block edition of offer type in loyalty offers,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Adrian Karaś,7200,2025-10-06T09:58:00.000Z,,
+ff7c11e81d043075271e89e36ab2bd8b3d3e21e8,GC-10421,[Suite-front] Add warning while change accumulation unit,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.2 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Adrian Karaś,10800,2025-11-06T07:25:00.000Z,,
+f690daca0bfef50c3ff5925cc053bcd8eac2ffcf,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,Adrian Karaś,7200,2025-11-06T13:16:00.000Z,,
+e6e3d1301be907080185800be5633e30adb1793f,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Adrian Karaś,5400,2025-11-06T13:46:00.000Z,"daily 45m,
+
+Maks pointsy offboarding - 45m",
+78847947ccc4e6ae494acc8ea224c40a8e037f77,WORKLOG-18,Absence,Worklog,Medium,Open,,,No sprint,,Adrian Karaś,28800,2025-12-05T23:14:00.000Z,,
+031e3744ba67b72151bd8ea36dc5e94e0c80415b,WORKLOG-18,Absence,Worklog,Medium,Open,,,No sprint,,Adrian Karaś,28800,,,
+031e3744ba67b72151bd8ea36dc5e94e0c80415b,WORKLOG-18,Absence,Worklog,Medium,Open,,,No sprint,,Adrian Karaś,28800,,,
+0aa619f7b928ee2c83f7fd054fb40f226cea68e2,WORKLOG-18,Absence,Worklog,Medium,Open,,,No sprint,,Aleksandra Adamczak,28800,2025-03-06T07:43:00.000Z,,
+94d183ee1e56a2b138a526ff96a175efac42e3c9,GC-10221,[Team Loyalty] Replace Loyalty discount with Personalised Offers discount,Task,High,Completed,,,CRM 2.5 2025 - Team Loyalty CRM 2.1 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty,,Aleksandra Adamczak,1800,2025-04-06T09:41:00.000Z,,
+26fb271755fc7a287171aa3e70016f1f8605ef41,GC-10379,Testy,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Aleksandra Adamczak,9000,2025-04-06T10:08:00.000Z,,
+e15de5b9f8c757b6295680eb12103e0e152f948a,WORKLOG-5,Education/Personal Development,Worklog,Medium,Open,,,No sprint,,Aleksandra Adamczak,3600,2025-04-06T12:34:00.000Z,en,
+5ab9ae7fb2e6552121885da59914bcbef1cbfc44,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Aleksandra Adamczak,4500,2025-04-06T12:35:00.000Z,,
+9978f3415900a7527ba2f0af23f8c5f2e09b00f5,WORKLOG-18,Absence,Worklog,Medium,Open,,,No sprint,,Aleksandra Adamczak,28800,2025-05-06T12:39:00.000Z,opieka ,
+3c8a6f9eba7ace6d6c11f1d26c20e854f9dbab43,WORKLOG-18,Absence,Worklog,Medium,Open,,,No sprint,,Aleksandra Adamczak,28800,2025-06-06T12:39:00.000Z,opieka,
+0610bc1b5d3bb8eae870b01eb85d56cfbc8749f1,GC-10379,Testy,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Aleksandra Adamczak,14400,2025-09-06T08:32:00.000Z,,
+d3e6aba4140c5ba9106b2f50444be221b2e1cf81,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Aleksandra Adamczak,4500,2025-09-06T12:40:00.000Z,,
+929d5d198033f8c6732cff8f1575e61d8801cc7e,GC-10379,Testy,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Aleksandra Adamczak,18000,2025-10-06T07:31:00.000Z,,
+9bcc5036bdeba17d399ce796471bd2a80d0cec31,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Aleksandra Adamczak,2700,2025-10-06T12:32:00.000Z,,
+14288fc95e8798167f1594b32c4511c0dc613822,GC-10379,Testy,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Aleksandra Adamczak,10800,2025-11-06T10:20:00.000Z,,
+2eca1932ee8519b2a80b17cc3f746828835d8c7b,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Aleksandra Adamczak,2700,2025-11-06T13:21:00.000Z,,
+32f51d25f41f19b5cf5d93f1fbac23e74e72f259,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,Aleksandra Adamczak,7200,2025-11-06T13:21:00.000Z,,
+6dd40f602fd2c7d24f1671f92455abe3d213e139,GC-10379,Testy,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Aleksandra Adamczak,14400,2025-12-06T07:00:00.000Z,,
+57c8205cdf79d8936129cf6c2d003eed7735f370,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Aleksandra Adamczak,7200,2025-12-06T21:52:00.000Z,,
+118821a27099aaf83fd4343b5f43afa1ec01f758,GC-10379,Testy,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Aleksandra Adamczak,18000,,,
+70c647448decd776e92e1dbc5ef9cc8407353979,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Aleksandra Adamczak,3600,,,
+118821a27099aaf83fd4343b5f43afa1ec01f758,GC-10379,Testy,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Aleksandra Adamczak,18000,,,
+70c647448decd776e92e1dbc5ef9cc8407353979,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Aleksandra Adamczak,2700,,,
+683b15ae3cc6724874eeb9562110c9546a961471,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,7200,2025-03-06T09:47:00.000Z,,
+21d50d1ac220e9d07e0cade7f55a033c9ea94c4f,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,8100,2025-03-06T09:47:00.000Z,,
+7d720e3a29cfde9b3d387b1ecbed552440e1893f,WORKLOG-29,TTL Time,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,1800,2025-03-06T09:48:00.000Z,Cyclic CRM TL/TTL Meeting,
+1519dcd2d32dff122761caeb98e97cf145f543c6,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,7200,2025-04-06T08:50:00.000Z,,
+b7d7a8d45aedbd4a056c61528ac36a1657c18be2,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,7200,2025-04-06T08:53:00.000Z,,
+f9987b52157db49e0c4ccf0ed71ab7e2f6d386f6,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,16200,2025-05-06T08:54:00.000Z,,
+fd20ddf4d6ffd3440ead000b59b3b7f3672cdeea,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,1800,2025-05-06T08:54:00.000Z,,
+4d41b206f29eb94e024642b146f0d6aecd7b3e1f,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,7200,2025-06-06T08:55:00.000Z,,
+f0308367cdb2c8b1e99bab4cc40fee499999987d,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,4500,2025-09-06T08:55:00.000Z,,
+46d5406576c1bc1921ab8380c15bedd027ac43ef,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,3600,2025-10-06T08:56:00.000Z,,
+36256fb84a62e1a34d7cc46854295408f22a0bb4,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,7200,2025-10-06T08:56:00.000Z,,
+9b9664c791644b1c36029b7934a257138565e91c,WORKLOG-5,Education/Personal Development,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,7200,2025-10-06T08:57:00.000Z,,
+c211e94472808d8bacdd396b2cfb5338568d067e,WORKLOG-29,TTL Time,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,1800,2025-10-06T08:58:00.000Z,Cyclic CRM TL/TTL Meeting,
+3d4e583b6f0dd95ef4254c0082c49a6241e64cee,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,7200,2025-11-06T09:56:00.000Z,,
+30fd38ecd55a5e555a2154ad1da308b8e7fd78fe,GC-10424,[BE-front] No offers when login to loyalty with promocode,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Bartłomiej Zwierzyński,10800,2025-12-06T09:42:00.000Z,,
+f7770c6032cfef575a71b8ffe291e3ac00011977,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,14400,2025-12-06T09:59:00.000Z,,
+62497497a3ef65428d3ed7fe8ebabb099e846157,GC-10423,[Suite] Error while saving offer,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Bartłomiej Zwierzyński,2412,2025-12-06T11:54:00.000Z,,
+e05d1673b40aa2fac02aa4eafa57e7e69c627386,GC-10424,[BE-front] No offers when login to loyalty with promocode,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Bartłomiej Zwierzyński,10800,,,
+58c8016f3095f6ecdf7d96bcfbf3d4acba117f06,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,7200,,,
+47894fc50179c96d48d6519018f992772e05fba8,WORKLOG-5,Education/Personal Development,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,3600,,,
+58c8016f3095f6ecdf7d96bcfbf3d4acba117f06,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,7200,,,
+40f95f081e194514cf3c9e8c8777c215d2158006,WORKLOG-29,TTL Time,Worklog,Medium,Open,,,No sprint,,Bartłomiej Zwierzyński,1800,,Preplanning,
+d8cad04c93fcd60337a89ef160a289cc7b34117c,GC-10415,[LS] Duplicated tiers in offers list,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Bogusław Kotarski,14400,2025-03-06T09:28:00.000Z,,
+68d2957beb29e7609f101e4315b10419578cc14e,GC-10373,[BE] Support for HYBRID,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Bogusław Kotarski,3312,2025-03-06T13:28:00.000Z,,
+4a46bbc6ebe5c354c0a85eae70085a2eda8bfa8a,WORKLOG-14,SUP2 Meetings,Worklog,Medium,Open,,,No sprint,,Bogusław Kotarski,900,2025-03-06T19:39:00.000Z,Refinement - Taski supportowe od 2nd LTS  - 15m,
+d273d7268bd0eca7f597768c819856e2233229b9,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bogusław Kotarski,5400,2025-03-06T19:55:00.000Z,Planning - Team Loyalty - 1h 30m,
+e11602d489f4230980a0b38525edf9cbba10b18c,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bogusław Kotarski,1800,2025-03-06T19:56:00.000Z,Planowanie CRM - Podsumowanie - 30m,
+6405b2093704bdcfd6e8bb15a316286e06c233a9,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bogusław Kotarski,1188,2025-03-06T19:57:00.000Z,Bogusław / Łukasz - 20m,
+c05c2bb75dab7ae387353f6c02c1859de065e49e,GC-10373,[BE] Support for HYBRID,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Bogusław Kotarski,14400,2025-04-06T08:22:00.000Z,,
+cbe5116eff9b8a67e9d928ec31bce0c81bb8435a,WORKLOG-5,Education/Personal Development,Worklog,Medium,Open,,,No sprint,,Bogusław Kotarski,3600,2025-04-06T11:21:00.000Z,Angielski - 1h,
+1cd83cf80b6b02cea65604ddd040a37b65c556e8,GC-10373,[BE] Support for HYBRID,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Bogusław Kotarski,2988,2025-04-06T12:26:00.000Z,,
+188199d8d0f50463f8418738292ab07db43b5594,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bogusław Kotarski,2700,2025-04-06T12:36:00.000Z,Daily - 45m,
+1eab37f78264aca54159e02b75d16fa312d788d3,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bogusław Kotarski,900,2025-04-06T12:37:00.000Z,"Testy loyalty exclusive offers - 15m
+
+",
+4d13be1e6fa476f2426cb35fefbe3debfc47cdf7,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,Bogusław Kotarski,1800,2025-05-06T11:25:00.000Z,Marketing consents refinement - 30m,
+8350a9094d6a788b6847bcd1039ef669fe4a6f95,GC-10379,Testy,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Bogusław Kotarski,15912,2025-05-06T12:14:00.000Z,,
+a0f9ab8b770857b8d1963761bf1136360a144499,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bogusław Kotarski,2988,2025-05-06T12:37:00.000Z,Daily - 50m,
+a0f9ab8b770857b8d1963761bf1136360a144499,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bogusław Kotarski,2088,2025-05-06T12:37:00.000Z,Microservices checkpoint - 35m,
+a0f9ab8b770857b8d1963761bf1136360a144499,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bogusław Kotarski,3600,2025-05-06T12:37:00.000Z,"Retro CRM - 1h
+
+",
+29d25a468722954de969bf6fb509f82178df19b0,GC-10379,Testy,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Bogusław Kotarski,19800,2025-06-06T11:49:00.000Z,,
+849d9cdec6adf4ab310c2c0add1ba7f00c7ebb38,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bogusław Kotarski,3600,2025-06-06T12:38:00.000Z,"Kafka -> spotkanie z kamerkami - 1h
+
+
+
+",
+627fdcc327a602c34f6db1969e9a82443427e39e,GC-10399,[External Loyalty] Implement retrieving and storing credentials in db,Sub-task,None,Completed,,,CRM 2.5 2025 - Team Loyalty CRM 1.3 2025 - Team Loyalty CRM 3.3 2025 - Team Loyalty CRM 1.1 2025 - Team Loyalty CRM 4.6 2024 - Team B CRM 3.2 2025 - Team Loyalty CRM 2.6 2025 - Team Loyalty CRM 4.5 2024 - Team B CRM 1.2 2025 - Team Loyalty CRM 4.7 2024 - Team Loyalty CRM 4.4 2025 - Team Loyalty,,Bogusław Kotarski,14400,2025-06-06T15:44:00.000Z,,
+3d17cb5bdc0a350e959e7ebb197ec6488a13e0e3,WORKLOG-11,Failures and troubleshooting,Worklog,Medium,Open,,,No sprint,,Bogusław Kotarski,5400,2025-09-06T08:27:00.000Z,Problemy z deployem feature/GC-10319 na testing,
+f12619153aa6b2d770baa604afa5d5a9366317ab,GC-10379,Testy,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Bogusław Kotarski,20988,2025-09-06T11:47:00.000Z,,
+793c99a62b2cc9944ced3e5caabbb01c846084ff,GC-10411,Issue with loyalty pods on production evn,Task,None,Completed,,,CRM 2.5 2025 - Team Loyalty,,Bogusław Kotarski,1512,2025-09-06T12:26:00.000Z,,
+69a4a3ddc8f1075ec7db1a5fae6b94aa11c6f570,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bogusław Kotarski,2988,2025-09-06T12:38:00.000Z,Daily CRM - technikalia - 50m,
+69a4a3ddc8f1075ec7db1a5fae6b94aa11c6f570,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bogusław Kotarski,612,2025-09-06T12:38:00.000Z,Cyclic Monthly Feedback: Bogusław - 10m,
+92f5ff21ed27bef4eb459d4e3ae074a18f3b0ee6,GC-10379,Testy,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Bogusław Kotarski,15012,2025-10-06T07:30:00.000Z,,
+d2e043a385890f16c08b1f78ab18a0896c7c2589,WORKLOG-5,Education/Personal Development,Worklog,Medium,Open,,,No sprint,,Bogusław Kotarski,7200,2025-10-06T12:35:00.000Z,Timebox for education/personal development - 2h,
+3a2a5aec1511fbad0410033a37eede220a4e79cf,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Bogusław Kotarski,2700,2025-10-06T12:39:00.000Z,Daily - 45m,
+0797e4aec04669b34de8c66f5993114202879a90,GC-10411,Issue with loyalty pods on production evn,Task,None,Completed,,,CRM 2.5 2025 - Team Loyalty,,Bogusław Kotarski,1188,,,
+db48dc37ad7fcf28f687520625e18e979b1c8e61,SUP-14620,"[Team CRM] Personalized offers incorrect discount, ID 1465 [T2], 12086[T3]",Support,Medium,Completed,,,CRM 2.5 2025 - Team CRM CRM 2.4 2025 - Team CRM,,Joanna Konieczna-Nowakowska,1188,2025-03-06T12:08:00.000Z,,
+492d84c1a07619d0d110303d8c376f5ca3bce974,SUP-14620,"[Team CRM] Personalized offers incorrect discount, ID 1465 [T2], 12086[T3]",Support,Medium,Completed,,,CRM 2.5 2025 - Team CRM CRM 2.4 2025 - Team CRM,,Joanna Konieczna-Nowakowska,900,2025-03-06T12:34:00.000Z,,
+f01616c5ddecf24cf7eaf5c20595b270af766bdd,GC-10280,Pomoc w tworzeniu dokumentacji dla zespołu CS (e-learning),Task,None,Completed,,,CRM 2.6 2025 - Team CRM CRM 2.5 2025 - Team CRM CRM 2.2 2025 - Team CRM CRM 2.3 2025 - Team CRM CRM 2.4 2025 - Team CRM CRM 3.1 2025 - Team CRM,,Joanna Konieczna-Nowakowska,5400,2025-03-06T12:49:00.000Z,,
+6d239f4288417a15592b94801b542b92f1ff2976,SUP-14620,"[Team CRM] Personalized offers incorrect discount, ID 1465 [T2], 12086[T3]",Support,Medium,Completed,,,CRM 2.5 2025 - Team CRM CRM 2.4 2025 - Team CRM,,Joanna Konieczna-Nowakowska,2412,2025-03-06T13:12:00.000Z,,
+f22f6710f0a35a784858422e38f7c86c6745d2d5,GC-10397,[VUE] Wrong price after a discount set on the opportunity form for a calculation with Loyalty discount is cancelled.,Task,None,Backlog,,,No sprint,,Joanna Konieczna-Nowakowska,1188,2025-03-06T13:27:00.000Z,,
+7dad742bf7e7c3b35152770aa37aa2c942799c87,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,7200,2025-03-06T14:18:00.000Z,Planowanie + podsumowanie,
+96fdf448a77ef961dfdd02410b613870793f6c26,GC-10221,[Team Loyalty] Replace Loyalty discount with Personalised Offers discount,Task,High,Completed,,,CRM 2.5 2025 - Team Loyalty CRM 2.1 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty,,Joanna Konieczna-Nowakowska,5400,2025-04-06T03:47:00.000Z,,
+5f5b8b285fa74763fd0bb524cd588fa6a28545c9,GC-10280,Pomoc w tworzeniu dokumentacji dla zespołu CS (e-learning),Task,None,Completed,,,CRM 2.6 2025 - Team CRM CRM 2.5 2025 - Team CRM CRM 2.2 2025 - Team CRM CRM 2.3 2025 - Team CRM CRM 2.4 2025 - Team CRM CRM 3.1 2025 - Team CRM,,Joanna Konieczna-Nowakowska,1800,2025-04-06T07:52:00.000Z,,
+f057db3463aefb2dd692d7df19cc711c5d26e4dd,WORKLOG-14,SUP2 Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,900,2025-04-06T08:15:00.000Z,Poranne Konsultacje,
+ba5e875b9930aacca97810ba2313291280820962,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,3600,2025-04-06T08:16:00.000Z,Daily + technikalia,
+2879aeb845607c8a6094e0c19c5c76d64d7e6132,GC-10221,[Team Loyalty] Replace Loyalty discount with Personalised Offers discount,Task,High,Completed,,,CRM 2.5 2025 - Team Loyalty CRM 2.1 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty,,Joanna Konieczna-Nowakowska,1800,2025-04-06T10:01:00.000Z,,
+d8b95f808c7156359c0732bf0af53f9b9607b61b,GC-10400,[VUE] Regression in side panel after BE release in discounts,Task,None,Backlog,,,No sprint,,Joanna Konieczna-Nowakowska,1512,2025-04-06T11:20:00.000Z,,
+4ae24362b7a844fc009fe700615856c419bef904,GC-10402,[VUE] The list of languages returned in offering module is not aligned with the selected languages in the Suite,Task,None,Backlog,,,No sprint,,Joanna Konieczna-Nowakowska,2088,2025-04-06T12:30:00.000Z,,
+8ef8bcd7e3193863a2788e24d789f4c2e2bc45c3,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,1800,2025-04-06T13:18:00.000Z,Tech Review,
+1c0ba72fedd35fef216eca1f53f443a74ea77ea0,GC-10221,[Team Loyalty] Replace Loyalty discount with Personalised Offers discount,Task,High,Completed,,,CRM 2.5 2025 - Team Loyalty CRM 2.1 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty,,Joanna Konieczna-Nowakowska,7200,2025-05-06T03:18:00.000Z,,
+afccccf936b586b72bbdc6a4757343a35118bc10,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,2700,2025-05-06T09:55:00.000Z,Daily,
+79f307450a68f2c73a479d1fda94fd1f26125dbf,WORKLOG-14,SUP2 Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,2988,2025-05-06T09:56:00.000Z,"- Poranne konsultacje
+- Konsultacja z BE ws SUP-14620",
+2f2a780d3086ef4e057e6f30eb88033401121483,GC-10280,Pomoc w tworzeniu dokumentacji dla zespołu CS (e-learning),Task,None,Completed,,,CRM 2.6 2025 - Team CRM CRM 2.5 2025 - Team CRM CRM 2.2 2025 - Team CRM CRM 2.3 2025 - Team CRM CRM 2.4 2025 - Team CRM CRM 3.1 2025 - Team CRM,,Joanna Konieczna-Nowakowska,5112,2025-05-06T11:39:00.000Z,,
+dbec33285a02eca03ced8df9a825cd817c6020eb,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,4212,2025-05-06T12:59:00.000Z,"- Retro
+- Testers checkpoint",
+8e28e3005a848e9a20b7cdb44245a2f68a7fe56a,WORKLOG-18,Absence,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,28800,2025-06-06T05:14:00.000Z,ulop,
+e4a512f6fdc43741b705cc4c5553e007caada6a4,GC-10416,Test Cases - Creating and sending of Personalized Offers with phone number only (no email required).,Test Suite,None,Passed,,,No sprint,,Joanna Konieczna-Nowakowska,5400,2025-09-06T05:41:00.000Z,,
+61706aebcb31780703eb16c62c9bcca4ff5389ba,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,4788,2025-09-06T09:22:00.000Z,"- Daily + technikalia
+- Montly",
+61706aebcb31780703eb16c62c9bcca4ff5389ba,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,4788,2025-09-06T09:22:00.000Z,"- Daily + technikalia
+- Montly",
+eaa380159babdd944cbbae85e9c7a4f089493d88,GC-10419,"[angular JS] ""Send campaign"" button should be hidden for users with reception access ",Task,None,To Test,,,No sprint,,Joanna Konieczna-Nowakowska,1800,2025-09-06T10:51:00.000Z,,
+4d691c62787d64e970f7d333c3917be7c6cb20bc,WORKLOG-6,Cross-team consultations,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,1188,2025-09-06T11:57:00.000Z,Przygotowanie wkładu dla UX pod nową prezentację cen na ofertowaniu.,
+608309e92e4d858e66986d0a3acddce2dcca25f0,GC-10416,Test Cases - Creating and sending of Personalized Offers with phone number only (no email required).,Test Suite,None,Passed,,,No sprint,,Joanna Konieczna-Nowakowska,1188,2025-10-06T06:50:00.000Z,,
+6e42a4e80714ecfb8fd09afe701c08be733d7486,WORKLOG-10,Releases and monitoring,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,1800,2025-10-06T07:35:00.000Z,Testy powdrożeniowe po wydaniu GC-10221,
+6e42a4e80714ecfb8fd09afe701c08be733d7486,WORKLOG-10,Releases and monitoring,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,1800,2025-10-06T07:35:00.000Z,Testy powdrożeniowe po wydaniu GC-10221,
+8113269fa21d5a99bc25ddc4f01899e4d7f8b9d1,WORKLOG-14,SUP2 Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,900,2025-10-06T07:44:00.000Z,,
+8113269fa21d5a99bc25ddc4f01899e4d7f8b9d1,WORKLOG-14,SUP2 Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,900,2025-10-06T07:44:00.000Z,,
+fc00fee9ef63493f9ae49afe54ea47063486c192,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,2700,2025-10-06T07:59:00.000Z,Daily,
+d1c6742412663aaf109b393202df34341a3b25c8,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,7488,2025-10-06T10:01:00.000Z,"Refy
+- biznes
+- tech",
+90abc280b530d8745fd4ab6e714efdaa587742c9,GC-10420,[VUE] Opportunities - Extras are cleared when a contact is added to Loyalty as the offer with no Loyalty context is recalculated.,Bug,None,Backlog,,,No sprint,,Joanna Konieczna-Nowakowska,1800,2025-10-06T10:47:00.000Z,,
+2ce59386d030d18aef348dbcdff7434e63779a58,GC-10416,Test Cases - Creating and sending of Personalized Offers with phone number only (no email required).,Test Suite,None,Passed,,,No sprint,,Joanna Konieczna-Nowakowska,9000,2025-11-06T05:42:00.000Z,,
+02d59f77336405c78d389c1fb2e4430ca509ad59,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,2988,2025-11-06T08:50:00.000Z,Daily + technikalia,
+02d59f77336405c78d389c1fb2e4430ca509ad59,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,2988,2025-11-06T08:50:00.000Z,Daily + technikalia,
+decb2063a2f5ea3c22669c27251fa28dd98c923b,WORKLOG-5,Education/Personal Development,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,3600,2025-11-06T12:25:00.000Z,English class,
+1f2044b9debf19967eb07c66f341de7a8bf71d7d,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,3600,2025-12-06T09:01:00.000Z,Daily + technikalia,
+a8d90f0f9ccf619723686fdad3bcb926cae5f981,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,7200,2025-12-06T09:39:00.000Z,"* Testers checkpoint
+* Rozpoznanie alternatywy dla Litmusa",
+c6dfc95763c43385bcc75ff9ba8d106263c23e06,WORKLOG-8,"I don't know what to log in for, but I really want to.",Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,5400,2025-12-06T11:37:00.000Z,Przetestowanie narzędzi trialowo na potrzeby https://profitroom.atlassian.net/wiki/spaces/QAG/pages/3686563842/Poszukiwania+alternatyw+dla+Litmusa,
+16e6f943e9a8cfb9534fa3988c17e2b6a2239fe4,GC-9841,Personalised Offers - WhatsApp integration,Story,Medium,Completed,,,CRM 4.5 2024 - Team A CRM 4.6 2024 - Team A CRM 1.3 2025 - Team CRM CRM 1.4 2025 - Team CRM CRM 2.2 2025 - Team CRM CRM 1.2 2025 - Team CRM CRM 1.5 2025 - Team CRM CRM 2.3 2025 - Team CRM CRM 2.1 2025 - Team CRM CRM 4.3 2024 - Team A,,Joanna Konieczna-Nowakowska,3600,2025-12-06T11:45:00.000Z,Testy autorespondera,
+6f27eebf96a054c31ccb319258fc2c5645976535,GC-9863,Tests - WhatsApp integration with personalized offers,Test Suite,None,Passed,,,No sprint,,Joanna Konieczna-Nowakowska,900,2025-12-06T12:42:00.000Z,,
+a82e5da5cc0b198f8f2a636c91f3755ee3157ff0,GC-10416,Test Cases - Creating and sending of Personalized Offers with phone number only (no email required).,Test Suite,None,Passed,,,No sprint,,Joanna Konieczna-Nowakowska,612,2025-12-06T13:05:00.000Z,Testy po fixie,
+30c50ebac554337e2c02ea0186ef99249a8a2b2f,GC-10416,Test Cases - Creating and sending of Personalized Offers with phone number only (no email required).,Test Suite,None,Passed,,,No sprint,,Joanna Konieczna-Nowakowska,9612,,,
+414cfee19c3ae90b543c2a8e1ec4feb3aef45f27,WORKLOG-14,SUP2 Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,900,,,
+385a9a6ec9ff93ac3717e2a3fc2754cd6e08caab,GC-9863,Tests - WhatsApp integration with personalized offers,Test Suite,None,Passed,,,No sprint,,Joanna Konieczna-Nowakowska,612,,,
+797ca37ef074fa9b08fe6f839236aee1fa29761d,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,1800,,Daily,
+30c50ebac554337e2c02ea0186ef99249a8a2b2f,GC-10416,Test Cases - Creating and sending of Personalized Offers with phone number only (no email required).,Test Suite,None,Passed,,,No sprint,,Joanna Konieczna-Nowakowska,5400,,,
+797ca37ef074fa9b08fe6f839236aee1fa29761d,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,5400,,Daily + technikalia,
+797ca37ef074fa9b08fe6f839236aee1fa29761d,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,3600,,Increment Demo,
+47383cc1d89f5c619d3766d4eab5c8ce2b004b8f,WORKLOG-8,"I don't know what to log in for, but I really want to.",Worklog,Medium,Open,,,No sprint,,Joanna Konieczna-Nowakowska,1188,,Przygotowanie sajta pod demo i biznesowe,
+30c50ebac554337e2c02ea0186ef99249a8a2b2f,GC-10416,Test Cases - Creating and sending of Personalized Offers with phone number only (no email required).,Test Suite,None,Passed,,,No sprint,,Joanna Konieczna-Nowakowska,7812,,,
+a38ecae59035dacb39149df24cfd54065c20673b,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,9000,2025-03-06T11:58:00.000Z,planning,
+3afbe79b102b6f848a7d942f2b033b26a3b74881,GC-10386,[Loyalty] Refactor register/create account handlers to meet requirements,Sub-task,None,Completed,,,CRM 2.5 2025 - Team Loyalty CRM 3.4 2025 - Team Loyalty CRM 3.3 2025 - Team Loyalty CRM 3.2 2025 - Team Loyalty CRM 4.4 2025 - Team Loyalty CRM 3.5 2025 - Team Loyalty,,Maqsudjon Khusainov,6012,2025-03-06T12:30:00.000Z,,
+415182de02360f61ae8351611a611701b659c40c,SUP-14673,"[Team Loyalty] Problem with loading prices from the loyalty programme in BE, ID=9208 (T2)",Support,High,Completed,,,CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty,,Maqsudjon Khusainov,3600,2025-03-06T13:18:00.000Z,fix env,
+4e0583999c60968d5d562e9d551d9c9fefb67026,GC-10385,[Loyalty] Modify query.loyalty.get-consent-contents,Sub-task,None,Completed,,,CRM 2.5 2025 - Team Loyalty CRM 3.4 2025 - Team Loyalty CRM 3.3 2025 - Team Loyalty CRM 3.2 2025 - Team Loyalty CRM 4.4 2025 - Team Loyalty CRM 3.5 2025 - Team Loyalty,,Maqsudjon Khusainov,3600,2025-03-06T13:30:00.000Z,,
+95c1ae4cb67eecc88e60d41162c9196014b76891,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,3600,2025-03-06T13:30:00.000Z,,
+3cf6da87401bb98852b5ad5cef22cb3915ea42e9,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,2988,2025-03-06T13:39:00.000Z,meet with TL,
+f1e0a9d69b144a13b838bef232ede1d97d74af58,SUP-14673,"[Team Loyalty] Problem with loading prices from the loyalty programme in BE, ID=9208 (T2)",Support,High,Completed,,,CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty,,Maqsudjon Khusainov,3600,2025-04-06T12:18:00.000Z,wydanie,
+402209b9b2662185f943bfa1473281a027201542,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,4500,2025-04-06T12:31:00.000Z,daily + tech,
+c66da8d526779b2553f1235fd75e7e0f06b7a009,WORKLOG-11,Failures and troubleshooting,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,3600,2025-04-06T12:32:00.000Z,debug loyalty logs in prod,
+5b4650f4058d81d6b1ad6d786738cb8032f67185,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,3600,2025-04-06T12:32:00.000Z,,
+bec8c706e611138fdd988fd7af879f9c7f6a3eac,GC-10221,[Team Loyalty] Replace Loyalty discount with Personalised Offers discount,Task,High,Completed,,,CRM 2.5 2025 - Team Loyalty CRM 2.1 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty,,Maqsudjon Khusainov,3600,2025-04-06T12:36:00.000Z,,
+b127a0c650c10ba9c38df1d2e7b88d6f5d61db7a,WORKLOG-6,Cross-team consultations,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,1800,2025-04-06T12:50:00.000Z,Beekman,
+b3757fad8287d4a4720946d729da21df0e9b3d9e,WORKLOG-29,TTL Time,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,2412,2025-04-06T12:52:00.000Z,preparation for tech review,
+c70c3ecd73f06e24c4ae96b90c7370413b63b343,WORKLOG-6,Cross-team consultations,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,1800,2025-04-06T13:02:00.000Z,,
+e437dc8abad0c72125d8c14d7a17eb50a08852dc,GC-10015,[Loyalty] Upper6/Suite Points implementation,Story,High,In Progress,,,CRM 2.5 2025 - Team Loyalty CRM 1.1 2025 - Team Loyalty CRM 4.4 2025 - Team Loyalty,,Maqsudjon Khusainov,1800,2025-04-06T13:06:00.000Z,,
+c21f93e8c147c1f5598afb69d08123163b507118,WORKLOG-8,"I don't know what to log in for, but I really want to.",Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,288,2025-04-06T13:06:00.000Z,logowanie czasu,
+0ef06204d2b8f663f21a7f32afcf4d7b34e917a3,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,1800,2025-04-06T13:07:00.000Z,tech review,
+42ae8f03d44439231b72ad5411531dfca47ad6ac,GC-10025,[Idealibbooking] Add a new rule (2),Sub-task,None,Code Review,,,CRM 2.5 2025 - Team Loyalty CRM 1.1 2025 - Team Loyalty CRM 4.4 2025 - Team Loyalty,,Maqsudjon Khusainov,7200,2025-06-06T12:33:00.000Z,,
+f90fc69d67b1a2a95d7fb3e60e91d485d9bea2a8,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,1800,2025-06-06T14:04:00.000Z,meet with tl,
+f5f662c5103f01887546099ddd001829d96ca4dd,WORKLOG-6,Cross-team consultations,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,1800,2025-06-06T14:04:00.000Z,bug verification,
+a16b59e5578c127d809f5d9ddfbfa57c7b4e0911,GC-10412,Fix issue with missing attribute in AC for loyalty,Bug,None,Completed,,,CRM 2.5 2025 - Team Loyalty,,Maqsudjon Khusainov,10800,2025-09-06T11:31:00.000Z,,
+d6c62ec2b0532272744d2c91b1a5cb334b8358f0,WORKLOG-11,Failures and troubleshooting,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,7200,2025-09-06T12:34:00.000Z,issue with env,
+131e44e9fe4a3a9d163b0fac84e9fae9fe11dedb,WORKLOG-29,TTL Time,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,3888,2025-09-06T13:29:00.000Z,,
+9751c7250452d7623d17eac5948232300f59c65b,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,2700,2025-09-06T13:47:00.000Z,daily,
+bc6663a994574480fadcd693093291aec0f8736c,WORKLOG-6,Cross-team consultations,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,2412,2025-09-06T13:52:00.000Z,consultation with BE,
+e20d009511af2d84dbc25c3bca7439e4d3fb3ddd,WORKLOG-6,Cross-team consultations,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,1800,2025-09-06T14:02:00.000Z,consultation with suite,
+7e3cf91580859e8d3f77067580eba151ad3c4afe,GC-10384,[Loyalty] Switch marketing consents to microservice,Story,Medium,On Hold,,,CRM 2.5 2025 - Team Loyalty CRM 3.4 2025 - Team Loyalty CRM 3.3 2025 - Team Loyalty CRM 3.2 2025 - Team Loyalty CRM 4.4 2025 - Team Loyalty CRM 3.5 2025 - Team Loyalty,,Maqsudjon Khusainov,7200,2025-10-06T12:37:00.000Z,,
+d4819dc3df96f4bd6e8a447efdc2d12fb2275648,GC-10331,[Parameters store][Upper6] PPH,Task,Medium,Completed,,,CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty,,Maqsudjon Khusainov,6012,2025-10-06T12:58:00.000Z,,
+a438dfa3f8994cf2f8b8da0dea87dfc0fcdfb09b,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,3600,2025-10-06T13:35:00.000Z,meet with BE,
+569c14defb0250204337e1256592a226f98e8fa0,GC-10221,[Team Loyalty] Replace Loyalty discount with Personalised Offers discount,Task,High,Completed,,,CRM 2.5 2025 - Team Loyalty CRM 2.1 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty,,Maqsudjon Khusainov,3600,2025-10-06T13:38:00.000Z,,
+9f4d4144562f507a5cc08db0149c239f3b51c38a,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,2412,2025-10-06T13:55:00.000Z,daily,
+1c76f9c023134d9e77f9f4b07808f97ce026c8fd,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,2412,2025-10-06T13:57:00.000Z,meet with KK,
+1dab9b6122b5b0d9ee28af89c3c695c3a667f61d,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,1800,2025-10-06T14:05:00.000Z,meet with Bartek,
+ac7c5e667aaf51ef8a6eb4eb39e0fd28bf5408a3,WORKLOG-10,Releases and monitoring,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,1800,2025-10-06T14:05:00.000Z,sentry monitoring,
+69fe222cefe99b28087d8b4324c4123c970af8b8,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,10800,2025-11-06T00:50:00.000Z,"Daily
+
+Meet with Adrian
+
+Roadmapa Q3",
+24e360346155fc61611034736c472e0c9cad1bcc,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,7200,2025-11-06T04:51:00.000Z,,
+c8ae5f974a6ba3720c2c6d26f242ab4a13f5418a,WORKLOG-6,Cross-team consultations,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,3600,2025-11-06T05:51:00.000Z,Meet with client,
+30a4ff4b452527c3c304b7ac2cbad4ece38e7108,WORKLOG-10,Releases and monitoring,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,1800,2025-11-06T06:22:00.000Z,sentry,
+3c9a1fcfc3fcc2d9a1d49cd6a8b259defa25546f,WORKLOG-9,Code review,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,1800,2025-11-06T06:22:00.000Z,,
+5fbec479ede587aae9e05fa7e795715da5c2e5b1,GC-10292,Loyalty exclusive offers,Story,Highest,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Maqsudjon Khusainov,3600,2025-11-06T06:23:00.000Z,,
+f393e1096251834a9f759d5147f37f5c2608cf2e,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,9000,2025-12-06T12:37:00.000Z,"daily
+
+microservices
+
+meet with TL",
+5923866bb39fbf1c016260038fe81ae8689e8e66,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,7812,2025-12-06T13:13:00.000Z,,
+60b16358b99d7fe2aaf7dfaa1b363d0890954666,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,3600,2025-12-06T14:07:00.000Z,meet with PM,
+ed83624c7a1ac342173adb607be927c585eef627,GC-10331,[Parameters store][Upper6] PPH,Task,Medium,Completed,,,CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty,,Maqsudjon Khusainov,3600,2025-12-06T14:08:00.000Z,,
+5e5a8a5e0bbedcc6136f9e9521076ad537ea632b,WORKLOG-6,Cross-team consultations,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,2412,2025-12-06T14:29:00.000Z,cliq responses,
+033da0ca099bc4e3e9d68c3717aca34eb8ad7b3f,WORKLOG-10,Releases and monitoring,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,1800,2025-12-06T14:38:00.000Z,sentry monitoring,
+0287c98992a3bb27f33dfae7c9100be83db1ce1a,GC-10319,[Loyalty exclusive offers] Changes in loyalty microservice,Story,High,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.2 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Maqsudjon Khusainov,1800,2025-12-06T14:46:00.000Z,,
+b625650e9cab772efd7476686dcc28658ee1e0d0,WORKLOG-9,Code review,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,612,2025-12-06T14:58:00.000Z,,
+80da495dce16997eb71abc7a48b26ba6127bf7d9,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,7200,,daily + tech + kafka,
+0f4900065a0f06b54473baa779483734fed9bf09,WORKLOG-6,Cross-team consultations,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,9000,,Loyalty flow schema and description for the client,
+f9e6136f457ae8e9ac3cde94355d5789fe7daed9,GC-10428,Fix issue with null loyaltyDetailsId,Bug,Low,Completed,,,CRM 2.5 2025 - Team Loyalty,,Maqsudjon Khusainov,7200,,,
+299d22f934773a2097459f12ad8bc9e0a6212ebb,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,3600,,,
+f9e6136f457ae8e9ac3cde94355d5789fe7daed9,GC-10428,Fix issue with null loyaltyDetailsId,Bug,Low,Completed,,,CRM 2.5 2025 - Team Loyalty,,Maqsudjon Khusainov,3600,,release + testing,
+12c36bde0bbe966fa1f4fae08711908807c56c3b,SUP-14714,"Incorrect currency conversion to foreign currency in opportunities with loyalty- SiteID 8531 , T2",Support,Medium,Completed,,,CRM 2.5 2025 - Team Loyalty,,Maqsudjon Khusainov,3600,,testing,
+2b1110a5cbc8e38401c10479112c9bf8cee958fd,GC-10430,[OC] Add loyalty type to allowed offer types,Sub-task,None,Completed,,,CRM 2.6 2025 - Team Loyalty CRM 2.5 2025 - Team Loyalty CRM 2.4 2025 - Team Loyalty CRM 2.3 2025 - Team Loyalty CRM 3.2 2025 - Team Loyalty CRM 3.1 2025 - Team Loyalty,,Maqsudjon Khusainov,3600,,,
+80da495dce16997eb71abc7a48b26ba6127bf7d9,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,9000,,"daily
+
+Meet with Marek
+
+Preplanning",
+80da495dce16997eb71abc7a48b26ba6127bf7d9,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,3600,,demo,
+0f4900065a0f06b54473baa779483734fed9bf09,WORKLOG-6,Cross-team consultations,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,3600,,,
+0f4900065a0f06b54473baa779483734fed9bf09,WORKLOG-6,Cross-team consultations,Worklog,Medium,Open,,,No sprint,,Maqsudjon Khusainov,2412,,,
+12c36bde0bbe966fa1f4fae08711908807c56c3b,SUP-14714,"Incorrect currency conversion to foreign currency in opportunities with loyalty- SiteID 8531 , T2",Support,Medium,Completed,,,CRM 2.5 2025 - Team Loyalty,,Maqsudjon Khusainov,1800,,,
+5893b92e7ed0a6ab9f22ca34d39ca79ee05a4fa0,GC-10391,Przetwarzanie danych osobowych w CRM - Analiza backendowa,Spike,High,Completed,,,CRM 2.4 2025 - Team CRM,,Marek Makowski,7200,2025-03-06T07:28:00.000Z,,
+e08bae10ec5f0f34c443607c09020a316e16e6dc,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Marek Makowski,7200,2025-03-06T07:39:00.000Z,,
+a06c9298905b6343800b0cd3cb4debc4eb068880,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,Marek Makowski,1800,2025-03-06T09:09:00.000Z,,
+b69a93316e25c61673708a6112cbf1d8ab997fa3,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Marek Makowski,14400,2025-04-06T04:46:00.000Z,,
+94ca7865dba357c61c7cbaa74afc2d425e0862d6,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Marek Makowski,4500,2025-04-06T07:30:00.000Z,,
+6693a0ca1d1b424c805a647e66b0af1f7e9f3633,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Marek Makowski,10800,2025-05-06T05:47:00.000Z,,
+5dcca12b6c1514621e67ad80fb8b4ddb8212fcc9,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Marek Makowski,6300,2025-06-06T07:03:00.000Z,,
+52ef71fe1f543ff3ba25e52a059d35d0fde96a22,WORKLOG-18,Absence,Worklog,Medium,Open,,,No sprint,,Marek Makowski,28800,2025-09-06T00:12:00.000Z,,
+0fa87a1e8d8f98a5c5eac7185115488d33e6d260,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,Marek Makowski,7200,2025-10-06T06:49:00.000Z,,
+bab569b89cf7f2c3cdeb5a3f35b8d79cdc0dc7dc,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Marek Makowski,2700,2025-11-06T08:25:00.000Z,,
+60a2f0a8b2b0eed3a5401bfec9d8d3b940a3f9b6,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Marek Makowski,6300,2025-12-06T07:25:00.000Z,,
+b70c6cab25501c3817e34c43b7ebe6bd77faef36,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Marek Makowski,7200,,,
+b70c6cab25501c3817e34c43b7ebe6bd77faef36,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Marek Makowski,2700,,,
+b70c6cab25501c3817e34c43b7ebe6bd77faef36,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Marek Makowski,14400,,,
+448ba466837d1182d6b0e1dc140f332fdf60bf2d,WORKLOG-5,Education/Personal Development,Worklog,Medium,Open,,,No sprint,,Marek Makowski,3600,,,
+94e6c7799bb52775de0ebdd2c0b979309d15f39f,GC-10209,Technical discovery: two-way integration with selected PMS for marketing consents & transactional data sync,Spike,None,Completed,,,CRM 2.5 2025 - Team CRM,,mateusz.pyka,12600,2025-03-06T11:25:00.000Z,,
+e9c82f6dac46e01946c1b70e2a597ebf08190efa,GC-10377,[Suite] Dodanie filtra InstantBooking do listingu szans,Task,None,Completed,,,CRM 2.5 2025 - Team CRM CRM 2.4 2025 - Team CRM,,mateusz.pyka,1800,2025-03-06T12:29:00.000Z,,
+0bd20403f44a482e0d565ed10247b27663cf8a1e,WORKLOG-14,SUP2 Meetings,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,900,2025-03-06T12:57:00.000Z,,
+1225bc1c4e5dfeeef3c0d61838e6ef6372e7d766,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,6300,2025-03-06T12:58:00.000Z,,
+886134f1b5bbcc50078afbc088b701b69b861b7e,WORKLOG-11,Failures and troubleshooting,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,1800,2025-03-06T12:58:00.000Z,,
+fe070a6e64f00a1e69e0e822e61f90b45fec3b23,WORKLOG-10,Releases and monitoring,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,1800,2025-03-06T12:59:00.000Z,,
+7a1c8bc1c2910a74925d319fa3db5eee11686e2c,WORKLOG-5,Education/Personal Development,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,3600,2025-03-06T13:12:00.000Z,angielski,
+86e1a5716e76d9349d9a5ea0bc9ba74c9df81689,GC-10377,[Suite] Dodanie filtra InstantBooking do listingu szans,Task,None,Completed,,,CRM 2.5 2025 - Team CRM CRM 2.4 2025 - Team CRM,,mateusz.pyka,14400,2025-04-06T09:36:00.000Z,,
+6615a1c68765d8440526890d9aa773e7b5f33a7b,GC-10209,Technical discovery: two-way integration with selected PMS for marketing consents & transactional data sync,Spike,None,Completed,,,CRM 2.5 2025 - Team CRM,,mateusz.pyka,1800,2025-04-06T13:07:00.000Z,,
+c434a92e9d42e65298c5fc33c934a24cd06e040e,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,5400,2025-04-06T13:35:00.000Z,,
+9754ede21664a043718b48efb97f0017f2cd48bc,WORKLOG-11,Failures and troubleshooting,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,5400,2025-04-06T13:35:00.000Z,dlq + testy infry,
+9e5ecda3f06e87e14420a976865b87616e32fbdf,WORKLOG-9,Code review,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,900,2025-04-06T13:35:00.000Z,,
+282ecab66b114cbe126989f83f28dcdd84563e76,WORKLOG-22,Difficulties,Worklog,None,Open,,,No sprint,,mateusz.pyka,900,2025-04-06T13:36:00.000Z,,
+c3ba54b16a6509a96a4adacfaf6e05f6cc3cc23c,GC-10209,Technical discovery: two-way integration with selected PMS for marketing consents & transactional data sync,Spike,None,Completed,,,CRM 2.5 2025 - Team CRM,,mateusz.pyka,14400,2025-05-06T09:29:00.000Z,,
+2689cda1f19c0f82369f702d5449627632e0d428,WORKLOG-14,SUP2 Meetings,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,2700,2025-05-06T09:45:00.000Z,konsultacje BE,
+a3b061a10632e81fb3434da9d98581fb7fc9d86d,SUP-14620,"[Team CRM] Personalized offers incorrect discount, ID 1465 [T2], 12086[T3]",Support,Medium,Completed,,,CRM 2.5 2025 - Team CRM CRM 2.4 2025 - Team CRM,,mateusz.pyka,900,2025-05-06T12:41:00.000Z,,
+0419a9cef74b2f7a05bf5701510925d61a1bd6e7,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,8100,2025-05-06T12:55:00.000Z,,
+a213e2b7c1060ef49305a986b45e7068b9fda73f,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,1800,2025-05-06T12:57:00.000Z,,
+198f0bb25ec442bc6b0ad46129c866bf21837d46,WORKLOG-9,Code review,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,900,2025-05-06T12:57:00.000Z,,
+df1d76d54db7f89abe46774de1bd292e1d25413d,SUP-14620,"[Team CRM] Personalized offers incorrect discount, ID 1465 [T2], 12086[T3]",Support,Medium,Completed,,,CRM 2.5 2025 - Team CRM CRM 2.4 2025 - Team CRM,,mateusz.pyka,23400,2025-06-06T06:02:00.000Z,,
+6dc7a9fbd5c7d317e1a7209f0213b10a4be80303,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,1800,2025-06-06T12:29:00.000Z,,
+0fe23780ea6e51eab89d5d6e1b25ad1115999d31,WORKLOG-9,Code review,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,900,2025-06-06T12:30:00.000Z,,
+3de11d0ea17512f1a0328a84f0cc2b9569f6ad2f,WORKLOG-10,Releases and monitoring,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,1800,2025-06-06T12:31:00.000Z,testy,
+e632d4fe344d95e5249e5db3d4414445b50ee022,WORKLOG-9,Code review,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,900,2025-06-06T12:31:00.000Z,,
+4635c3a75da18f05deccf7ad5490679a0c17596a,SUP-14718,[Wrzutka][Team CRM] Disable Instant Booking for GODO group T1,Support,Medium,Completed,,,CRM 2.5 2025 - Team CRM,,mateusz.pyka,900,2025-09-06T06:56:00.000Z,,
+783964e1c945ebe903c2563214c1d437e28b0408,SUP-14633,"[Team CRM] Problem with segments from the loyalty programme  ,SiteID=1604 (T1)",Support,Medium,Completed,,,CRM 2.6 2025 - Team CRM CRM 2.5 2025 - Team CRM,,mateusz.pyka,18000,2025-09-06T07:47:00.000Z,,
+1621d21bcb0ae9beb319bce90f1e56ab0c9020b7,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,4500,2025-09-06T10:19:00.000Z,,
+0fc0d11b04b4cfafb8689032c3bfeb88e0fb5cc0,WORKLOG-11,Failures and troubleshooting,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,3600,2025-09-06T12:46:00.000Z,,
+aaa70faac9d6beba6de45034cf62bd2589966b16,WORKLOG-9,Code review,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,1800,2025-09-06T12:46:00.000Z,,
+c9c3701b767e7e05b05bb8b948193612e64df55d,SUP-14633,"[Team CRM] Problem with segments from the loyalty programme  ,SiteID=1604 (T1)",Support,Medium,Completed,,,CRM 2.6 2025 - Team CRM CRM 2.5 2025 - Team CRM,,mateusz.pyka,10800,2025-10-06T10:07:00.000Z,,
+7845b33ea99df5746592ac88232657b3effe4245,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,8100,2025-10-06T13:04:00.000Z,,
+e5c613acf6061338b389a72b892d53206c4b60cb,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,3600,2025-10-06T13:05:00.000Z,,
+a52d33d245d1b544d9c2f2d228f3402db56434af,WORKLOG-5,Education/Personal Development,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,3600,2025-10-06T13:05:00.000Z,,
+bf0cca9caedfdacc1ffedb49a8c50f469184239f,WORKLOG-11,Failures and troubleshooting,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,1800,2025-10-06T13:06:00.000Z,,
+a588bb19108af7c9282c09d887cbbc46324831a2,WORKLOG-9,Code review,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,900,2025-10-06T13:06:00.000Z,,
+c109c56dd9c525aaaf91533c46f39fbfa837c617,SUP-14701,"[Team CRM] Inactive method of obtaining marketing consents for  www newsletter (ID=10962, T1)",Support,Medium,Completed,,,CRM 2.6 2025 - Team CRM CRM 2.5 2025 - Team CRM,,mateusz.pyka,1800,2025-11-06T07:31:00.000Z,,
+aee8430011141a74b905233eb81e440c30b2555a,SUP-14633,"[Team CRM] Problem with segments from the loyalty programme  ,SiteID=1604 (T1)",Support,Medium,Completed,,,CRM 2.6 2025 - Team CRM CRM 2.5 2025 - Team CRM,,mateusz.pyka,10800,2025-11-06T11:59:00.000Z,,
+feff3e4a0a846f8bdaae97b1a835c209a666d929,GC-10413,[wrzutka] Add CRM event to user profile after marketing consent is added in personalised offers module ,Task,Highest,Completed,,,CRM 2.6 2025 - Team CRM CRM 2.5 2025 - Team CRM,,mateusz.pyka,10800,2025-11-06T11:59:00.000Z,,
+da805010be04437526642a03272fdadeca2d56f5,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,3600,2025-11-06T14:57:00.000Z,,
+e85a5def4d6b66370392ecf3d93499ae6bcdca40,WORKLOG-11,Failures and troubleshooting,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,1800,2025-11-06T14:57:00.000Z,,
+82903fb7d200e658fc35b0badf3537656a3b4e58,GC-10377,[Suite] Dodanie filtra InstantBooking do listingu szans,Task,None,Completed,,,CRM 2.5 2025 - Team CRM CRM 2.4 2025 - Team CRM,,mateusz.pyka,1800,2025-12-06T10:31:00.000Z,,
+d28a8f87f7164c8cc86637996a1d535aca2567b5,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,7200,2025-12-06T10:40:00.000Z,,
+6338ab88436fe5fdd01476e5f765fe2e5ad59e80,GC-10413,[wrzutka] Add CRM event to user profile after marketing consent is added in personalised offers module ,Task,Highest,Completed,,,CRM 2.6 2025 - Team CRM CRM 2.5 2025 - Team CRM,,mateusz.pyka,14400,2025-12-06T11:01:00.000Z,,
+ffc92930f8f4d779d871a571e337938c6eb60832,WORKLOG-10,Releases and monitoring,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,3600,2025-12-06T11:01:00.000Z,wydanie + testy,
+ab8df0d10eb97ccfd2cae90e8f62bbec6da8e920,WORKLOG-11,Failures and troubleshooting,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,1800,2025-12-06T11:02:00.000Z,,
+4bc4e946ebe084e48e39f5136fed897fd2cf1d3a,SUP-14701,"[Team CRM] Inactive method of obtaining marketing consents for  www newsletter (ID=10962, T1)",Support,Medium,Completed,,,CRM 2.6 2025 - Team CRM CRM 2.5 2025 - Team CRM,,mateusz.pyka,9000,,,
+8181d605be0b03c63d1290c79ff33d75e26e3bee,GC-10413,[wrzutka] Add CRM event to user profile after marketing consent is added in personalised offers module ,Task,Highest,Completed,,,CRM 2.6 2025 - Team CRM CRM 2.5 2025 - Team CRM,,mateusz.pyka,9000,,,
+60349238bd25d17584c9f889c3ef35ab43b12d23,SUP-14633,"[Team CRM] Problem with segments from the loyalty programme  ,SiteID=1604 (T1)",Support,Medium,Completed,,,CRM 2.6 2025 - Team CRM CRM 2.5 2025 - Team CRM,,mateusz.pyka,3600,,,
+9499721f4f5993125bcc67df5acdd1cf4fd1b24d,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,1800,,,
+bbc37583ee4a1306d61cd024f09a3219712ab3cc,WORKLOG-5,Education/Personal Development,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,5400,,WSRD - FFA: który AI tool najlepszy?,
+8181d605be0b03c63d1290c79ff33d75e26e3bee,GC-10413,[wrzutka] Add CRM event to user profile after marketing consent is added in personalised offers module ,Task,Highest,Completed,,,CRM 2.6 2025 - Team CRM CRM 2.5 2025 - Team CRM,,mateusz.pyka,10800,,,
+4bc4e946ebe084e48e39f5136fed897fd2cf1d3a,SUP-14701,"[Team CRM] Inactive method of obtaining marketing consents for  www newsletter (ID=10962, T1)",Support,Medium,Completed,,,CRM 2.6 2025 - Team CRM CRM 2.5 2025 - Team CRM,,mateusz.pyka,7200,,,
+9499721f4f5993125bcc67df5acdd1cf4fd1b24d,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,7200,,,
+400f84d9e1ca69f3f2f4fea58d28e20d16ad176f,WORKLOG-22,Difficulties,Worklog,None,Open,,,No sprint,,mateusz.pyka,900,,sms sender,
+1fe8d67a876c5fab10e67f34c3762879e76f569e,WORKLOG-11,Failures and troubleshooting,Worklog,Medium,Open,,,No sprint,,mateusz.pyka,2700,,,
+cfe72ddb24fa177e2bb84260886c62325669490e,WORKLOG-7,TL time,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,4212,2025-03-06T14:02:00.000Z,"Bogusław/Łukasz
+
+Cyclic CRM TL/TTL Meeting",
+c1c83598feed6658a317535b2a12f923621927a7,WORKLOG-7,TL time,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,900,2025-03-06T14:58:00.000Z,Łukasz → Bartek,
+7060f5bb24fdfb811522ce6b407a511625d69004,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,12888,2025-03-06T15:11:00.000Z,"Crossteam planning
+Adily AIA
+
+[placeholder] Communication Tab [insights synthesis]
+
+Planowanie CRM - Podsumowanie
+
+Lets estimate",
+7888ce2fb674c2e470a0605d6216153705d2ab2b,WORKLOG-7,TL time,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,9288,2025-03-06T15:17:00.000Z,"Whatsapp -> followup -> ogarnięcie dostepw do twilio
+Developemnt Whatsapp
+Dyskusje na kanale Priv",
+78123bf599a55e355b863cf022a00166682f18b0,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,4500,2025-04-06T14:06:00.000Z,"Daily
+Daiulu AIA",
+89f9ef422fd9a4e3f865ee0b67a872893c781814,WORKLOG-7,TL time,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,24300,2025-04-06T14:08:00.000Z,"Interview via Google Meet - Szymon Mastalerz
+Bartłomiej / Łukasz
+Adran/Łukasz
+Shaping processes
+quick sync
+Bartek/Łukasz
+Karina
+Task o Backfill
+Przygotowanie sie do rekrutacji
+Wnioski po rekrutacji
+Wytypowanie kolejnych kandydatów do rekrutacji",
+426e4b8056a64e36ae6c14cdafcff4de410ba162,AIA-41,AI Agent as an Autoresponder for Personalised Offers in WhatsApp,Story,Low,Done,,,AIA MSP,,Łukasz Chrzumnicki,3600,2025-04-06T14:24:00.000Z,,
+1d5c116fe15fb67b012bbb017823b96225ee5627,AIA-41,AI Agent as an Autoresponder for Personalised Offers in WhatsApp,Story,Low,Done,,,AIA MSP,,Łukasz Chrzumnicki,6300,2025-05-06T12:56:00.000Z,Zmiany pod CRM-a,
+5848d5497f43dac47e3a5fbedcf0286d1047449e,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,16200,2025-05-06T14:29:00.000Z,"Daily
+Daily AIA
+Mikroserwisy
+🎨 UX Design biweekly
+Retro CRM
+AI Agent - mid-term retrospective",
+5b1435435bedf8042ad4ce07235dd3f0385c4515,WORKLOG-7,TL time,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,3600,2025-05-06T14:30:00.000Z,"Bartek <-> Łukasz
+Pliczek Rekrutacyjny",
+8effd7a1293a0fc182c79d4461f0e180d7a3f136,WORKLOG-6,Cross-team consultations,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,2700,2025-05-06T14:32:00.000Z,Omówienie taska z pogranicza produktów-> SUP-14620,
+c9063a9182b04ee7f9b3f3ace59d8f6f65db1681,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,10800,2025-06-06T12:21:00.000Z,"Daily
+Daily AIAI
+Kafka
+Agent sync
+Debugowanie agenta",
+1745c12df9963d39270a8d131c64b167793ec19b,WORKLOG-7,TL time,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,4500,2025-06-06T12:21:00.000Z,"Łukasz -> Bartek
+Max -> Łukasz",
+d041d8ea955d2b3e15260c54ff1973d1cbf6b634,AIA-91,Odblokowanie możliwości wysyłki szans sprzedażowych poza channelID 1772,Task,None,Done,,,No sprint,,Łukasz Chrzumnicki,900,2025-09-06T09:39:00.000Z,Development + wydanie,
+f2473ca0342ee09e767153b7908d324e6d5b814a,AIA-41,AI Agent as an Autoresponder for Personalised Offers in WhatsApp,Story,Low,Done,,,AIA MSP,,Łukasz Chrzumnicki,2700,2025-09-06T13:28:00.000Z,,
+c9ed8a12f2a0ec7992c1c590cd1577b12c972be4,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,9000,2025-09-06T14:11:00.000Z,"Daily
+Daily AIA
+Lets Estimate
+
+Nowy flow rozmowy w AI Agent w MSP",
+8201f3497a4cbf36b8825eb5bd3f142ca25d6ea2,WORKLOG-11,Failures and troubleshooting,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,3600,2025-09-06T14:12:00.000Z,Problem z mailerem i AC,
+f5abd212dbbbce14dc71b132c21c61dd84b244ae,WORKLOG-7,TL time,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,12600,2025-09-06T14:12:00.000Z,Feedbacks,
+c9927859823ac3feba4a8f9629a9e2255d67290c,AIA-41,AI Agent as an Autoresponder for Personalised Offers in WhatsApp,Story,Low,Done,,,AIA MSP,,Łukasz Chrzumnicki,1188,2025-10-06T08:54:00.000Z,,
+2e7c3d1af09cdd04c3c26d5473cd37def00a7ec7,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,3600,2025-10-06T09:10:00.000Z,"Daily
+Daily AIA",
+857f1c92b779feef22de36a5dc1b14354314d0f0,WORKLOG-9,Code review,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,900,2025-10-06T09:11:00.000Z,,
+d18043243cc5b30ba38eac4a1a4a9377d3aaa617,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,2700,2025-10-06T09:11:00.000Z,Ref Produktowy CRM,
+a365d372a4f661c2046381706d50320a569d4b50,WORKLOG-6,Cross-team consultations,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,900,2025-10-06T09:13:00.000Z,Kevin - Loyalty Experts,
+2485b8cbf040066f988b726fab6a64e2b3b2e901,AIA-41,AI Agent as an Autoresponder for Personalised Offers in WhatsApp,Story,Low,Done,,,AIA MSP,,Łukasz Chrzumnicki,6912,2025-10-06T10:37:00.000Z,,
+a21a2aca7b98f451bdf3149ac9841708bfc16873,AIA-41,AI Agent as an Autoresponder for Personalised Offers in WhatsApp,Story,Low,Done,,,AIA MSP,,Łukasz Chrzumnicki,5400,2025-11-06T14:11:00.000Z,"Konfiguracja twilio, Domink, + poprawki do CR + Docker dla chatbota",
+eec801d12e033be9f67c2adc84f1219abc0573d4,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,7200,2025-11-06T15:37:00.000Z,"2x Daily
+Roadmapa Q3+ a potencjalnie nowy podzial obszarowy",
+9e4b777459ef2da5d2d71ccb4e4881d292e20355,WORKLOG-7,TL time,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,12600,2025-11-06T15:39:00.000Z,"shaping
+TL Meeting
+Spisanie Feedbacku z rekru dla Szymona
+Rekru fronta i cała dyskusja
+Rekru junior php do SFT = dyskusja",
+dc911bd7bb9fb0073a18d4c16a1ffa678c972cf6,WORKLOG-1,Refinement,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,3600,2025-11-06T15:39:00.000Z,"
+Refinement produktowy [TEAM Loyalty]",
+0d34389d52b1bb8b555f84757c9352aa6b71f204,WORKLOG-11,Failures and troubleshooting,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,3600,,"Marta → Łukasz
+
+Poprawka do onboarding toola",
+3fc8dcd922f55f966f738eddfaa3f716f324c71b,WORKLOG-7,TL time,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,1800,,Feedback dla Szymona - po rekrutacji,
+72c2ad7302c464e3cb92c741245da7d9f1fdbe06,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,18000,,"Daily
+Daily AIA
+AIA-23 Pair programming
+AI Agent - sync
+WSRD",
+2e7084c1088b28cba0b59dc230830c67276c65e7,AIA-41,AI Agent as an Autoresponder for Personalised Offers in WhatsApp,Story,Low,Done,,,AIA MSP,,Łukasz Chrzumnicki,5400,,,
+2e7084c1088b28cba0b59dc230830c67276c65e7,AIA-41,AI Agent as an Autoresponder for Personalised Offers in WhatsApp,Story,Low,Done,,,AIA MSP,,Łukasz Chrzumnicki,9900,,"Poprawki, wystawienie na testing, postawienie sajta na środowsiku testowym",
+72c2ad7302c464e3cb92c741245da7d9f1fdbe06,WORKLOG-32,Meetings,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,9900,,"Daily
+Preplanning
+Demo",
+8cd06d9e8e4e22aa9b2a605b48d1e96144c7f3a5,WORKLOG-10,Releases and monitoring,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,8100,,Wydanie whatsappa + Konfiguracja,
+3fc8dcd922f55f966f738eddfaa3f716f324c71b,WORKLOG-7,TL time,Worklog,Medium,Open,,,No sprint,,Łukasz Chrzumnicki,3600,,Konsultacje + Spotkanie z Patrykiem W.,

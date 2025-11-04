@@ -583,7 +583,10 @@ async function loadTopTasks(sprintOverride) {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
 
-    topInfo.textContent = `Zakres ${data.from} → ${data.to}. Zespoły z CSV: ${data.teams_with_csv}/${data.teams_considered}. Min ≥ ${data.minh}h.`;
+    const fallbackNote = data.teams_with_fallback
+      ? ` • fallback ≥ ${data.fallback_min}h dla ${data.teams_with_fallback} zespołów`
+      : '';
+    topInfo.textContent = `Zakres ${data.from} → ${data.to}. Zespoły z CSV: ${data.teams_with_csv}/${data.teams_considered}. Min ≥ ${data.minh}h${fallbackNote}.`;
 
     if (!data.results.length) {
       topWrap.innerHTML = '<div class="muted" style="opacity:.8">Brak zadań spełniających warunki (≥16h, bez WORKLOG) lub brak CSV u zespołów.</div>';
@@ -591,6 +594,9 @@ async function loadTopTasks(sprintOverride) {
     }
 
     topWrap.innerHTML = data.results.map(team => {
+      const minBadge = team.min_hours_used && team.min_hours_used !== data.minh
+        ? `<span class="chip" title="Próg obniżony z ${data.minh}h">≥ ${team.min_hours_used}h</span>`
+        : '';
       const rows = team.items.map(it => `
         <tr>
           <td class="nowrap"><a class="link" href="${it.url}" target="_blank" rel="noopener">${it.issue_key}</a></td>
@@ -603,7 +609,9 @@ async function loadTopTasks(sprintOverride) {
       return `
         <div class="table-card">
           <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; border-bottom:1px solid var(--border);">
-            <div style="font-weight:800">${team.team_label}</div>
+            <div style="font-weight:800; display:flex; gap:8px; align-items:center;">
+              <span>${team.team_label}</span>${minBadge}
+            </div>
             <div class="muted" style="font-size:12px">${team.source_file}</div>
           </div>
           <div class="scroll">
