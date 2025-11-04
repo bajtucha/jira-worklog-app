@@ -1152,10 +1152,20 @@ app.get('/api/sprint-top', async (req, res) => {
 
     // 🔍 1) wykryj realne zespoły po istniejących plikach CSV w katalogu (działa także dla świeżo importowanych)
     const csvFiles = await listCsvFilesForRange(from, to);
+    const grouped = new Map();
+    for (const fp of csvFiles){
+      const base = path.basename(fp);
+      const slugKey = base.split('__')[0];
+      const isExternal = base.includes('__external');
+      if (!grouped.has(slugKey)) grouped.set(slugKey, { external: null, regular: null });
+      const bucket = grouped.get(slugKey);
+      if (isExternal) bucket.external = fp;
+      else bucket.regular = fp;
+    }
+    let filesToUse = Array.from(grouped.values()).map(entry => entry.external || entry.regular).filter(Boolean);
 
     // 2) Jeśli nie ma żadnego pliku (świeży zakres), to spróbuj jednak przelecieć po JIRA_GROUPS,
     //    aby ewentualnie wymusić powstanie CSV (gdy już istnieją dane w DB).
-    let filesToUse = csvFiles;
     if (filesToUse.length === 0) {
       // spróbuj zbudować listę ścieżek na podstawie zdefiniowanych grup (jeśli pliki istnieją)
       const maybe = await Promise.all(GROUPS.map(g => pickExistingCsvFor({ from, to, group: g.label })));
