@@ -1,0 +1,21 @@
+worklog_id,issue_key,issue_summary,issue_type,priority,status,assignee_email,epic_key,sprint,author_email,author_account_id,time_spent_seconds,started,comment,issue_description
+143683,WORKLOG-34,Technical support,Worklog,None,Open,,,,pawel.malinowski@profitroom.com,712020:b46e2752-47d4-44a5-8329-40ab5abbea40,18000,2025-08-11T08:36:00.000+0200,,"Wsparcie techniczne w zakresie podobnym do 2nd Line of Support, realizowane przez developerów."
+143065,EM-435,Consent content for cookie banners,New Feature,High,To Release,maciej.mankowski@profitroom.com,,,maciej.mankowski@profitroom.com,712020:95645649-2d6a-4511-900b-5d00e466f31e,3600,2025-08-05T15:53:00.614+0200,,"1. zapisywać treści zgód cookie w WA poprzez synchronizacje
+2. przekazywać tresci zgood cookie z backendu WA do szablonu
+3. DIGITAl musi wyświetlać te zgody na banerze
+PO SPOTKANIU ZE SUITE:
+pozbywamy się pola name z translacji consentów.
+klucz name przekazujemy jako zbudowane pole: “purpose_scope_variant“, my tłumaczymy klucze po stronie backendu i przkazujemy gotowe klucze na front
+EDIT 28.10.2025:
+dodanie customowego endpointu dla digitala by zwrócic treśc zgody marketingowej, z identyfikatorami dla modala newslettera"
+143064,EM-435,Consent content for cookie banners,New Feature,High,To Release,maciej.mankowski@profitroom.com,,,maciej.mankowski@profitroom.com,712020:95645649-2d6a-4511-900b-5d00e466f31e,14400,2025-08-04T12:52:00.000+0200,,"1. zapisywać treści zgód cookie w WA poprzez synchronizacje
+2. przekazywać tresci zgood cookie z backendu WA do szablonu
+3. DIGITAl musi wyświetlać te zgody na banerze
+PO SPOTKANIU ZE SUITE:
+pozbywamy się pola name z translacji consentów.
+klucz name przekazujemy jako zbudowane pole: “purpose_scope_variant“, my tłumaczymy klucze po stronie backendu i przkazujemy gotowe klucze na front
+EDIT 28.10.2025:
+dodanie customowego endpointu dla digitala by zwrócic treśc zgody marketingowej, z identyfikatorami dla modala newslettera"
+142647,WORKLOG-34,Technical support,Worklog,None,Open,,,,maciej.mankowski@profitroom.com,712020:95645649-2d6a-4511-900b-5d00e466f31e,18000,2025-08-01T03:26:00.000+0200,,"Wsparcie techniczne w zakresie podobnym do 2nd Line of Support, realizowane przez developerów."
+142554,WORKLOG-34,Technical support,Worklog,None,Open,,,,maciej.mankowski@profitroom.com,712020:95645649-2d6a-4511-900b-5d00e466f31e,16200,2025-07-31T10:39:00.000+0200,,"Wsparcie techniczne w zakresie podobnym do 2nd Line of Support, realizowane przez developerów."
+141836,WORKLOG-34,Technical support,Worklog,None,Open,,,,maciej.mankowski@profitroom.com,712020:95645649-2d6a-4511-900b-5d00e466f31e,12600,2025-07-29T12:37:53.527+0200,,"Wsparcie techniczne w zakresie podobnym do 2nd Line of Support, realizowane przez developerów."

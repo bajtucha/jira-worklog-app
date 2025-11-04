@@ -959,6 +959,7 @@ importFile.addEventListener('change', async ()=>{
         const author_email = get('author_email',['authorEmail']);
         const author_account_id = get('author_account_id',['authorAccountId','author']);
         const sprint = get('sprint');
+        const issue_description = get('issue_description',['description','issueDescription']);
         const tssRaw = get('time_spent_seconds',['timeSpentSeconds','timespentseconds','time_spent']);
 
         return {
@@ -972,6 +973,7 @@ importFile.addEventListener('change', async ()=>{
           author_email,
           author_account_id,
           sprint,
+          issue_description,
           time_spent_seconds: Number(tssRaw||0)
         };
       });
