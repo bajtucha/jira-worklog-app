@@ -1,0 +1,1540 @@
+<!doctype html>
+<html lang="pl" data-theme="auto">
+<head>
+  <meta charset="utf-8" />
+  <title>JIRA Worklogs — Sprint Summary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light">
+  <style>
+    /* ============================== */
+    /*          THEME TOKENS          */
+    /* ============================== */
+    :root{
+      --bg: #0a0b10;
+      --bg-2: #0c0f17;
+      --panel: rgba(20,22,31,.7);
+      --panel-2: rgba(24,27,38,.6);
+      --muted: rgba(255,255,255,.06);
+      --border: rgba(255,255,255,.12);
+      --text: #e9eef7;
+      --subtext:#b8c0d4;
+
+      --accent:#7aa7ff;
+      --accent-2:#22d3ee;
+      --good:#22c55e;
+      --warn:#f59e0b;
+      --danger:#ef4444;
+
+      --card-shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 16px;
+      --radius-sm: 12px;
+      --radius-lg: 22px;
+
+      --badge:#1a1f2c;
+      --track:#111622;
+
+      --grad-1: radial-gradient(1200px 650px at 10% -10%, #4729ff33 0%, transparent 55%),
+                radial-gradient(1200px 650px at 110% 15%, #00e0ff2e 0%, transparent 55%),
+                radial-gradient(900px 600px at 50% 120%, #00ff6a22 0%, transparent 60%);
+      --primary-grad: linear-gradient(180deg, #5793ff, #2f6af3);
+      --primary: #3b82f6;
+      --primary-ghost: rgba(59,130,246,.12);
+      --danger-grad: linear-gradient(180deg, #ef4444, #dc2626);
+      --ok-grad: linear-gradient(180deg, #22c55e, #16a34a);
+
+      --glass-blur: blur(10px);
+      --glass-stroke: 1px solid var(--border);
+    }
+    @media (prefers-color-scheme: light){
+      html[data-theme="auto"]{
+        --bg:#f6f7fb;
+        --bg-2:#eef1f7;
+        --panel: rgba(255,255,255,.92);
+        --panel-2: rgba(255,255,255,.85);
+        --muted: rgba(10,14,24,.06);
+        --border: rgba(10,14,24,.10);
+        --text:#0c1425;
+        --subtext:#4b5568;
+        --badge:#eef1f7;
+        --track:#e8ecf5;
+        --card-shadow: 0 14px 40px rgba(8, 15, 35, .08);
+        --grad-1: radial-gradient(1200px 650px at 10% -10%, #7aa7ff33 0%, transparent 55%),
+                  radial-gradient(1200px 650px at 110% 15%, #22d3ee2e 0%, transparent 55%),
+                  radial-gradient(900px 600px at 50% 120%, #22c55e22 0%, transparent 60%);
+      }
+    }
+    html[data-theme="light"]{
+      --bg:#f6f7fb; --bg-2:#eef1f7; --panel: rgba(255,255,255,.92); --panel-2: rgba(255,255,255,.85);
+      --muted: rgba(10,14,24,.06); --border: rgba(10,14,24,.10); --text:#0c1425; --subtext:#4b5568;
+      --badge:#eef1f7; --track:#e8ecf5; --card-shadow: 0 14px 40px rgba(8, 15, 35, .08);
+      --grad-1: radial-gradient(1200px 650px at 10% -10%, #7aa7ff33 0%, transparent 55%),
+                radial-gradient(1200px 650px at 110% 15%, #22d3ee2e 0%, transparent 55%),
+                radial-gradient(900px 600px at 50% 120%, #22c55e22 0%, transparent 60%);
+    }
+
+    /* ============================== */
+    /*         GLOBAL STYLES          */
+    /* ============================== */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        linear-gradient(200deg, var(--bg) 0%, var(--bg-2) 100%),
+        var(--grad-1);
+      background-attachment: fixed;
+      font: 14px/1.5 system-ui,-apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      letter-spacing:.2px;
+    }
+    .container{
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px;
+      display: grid;
+      gap: 16px;
+    }
+
+    /* ============================== */
+    /*         HEADER / NAV           */
+    /* ============================== */
+    .nav{
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand{
+      display:flex; gap:12px; align-items:center;
+      padding: 12px 16px;
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: var(--glass-stroke);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      box-shadow: var(--card-shadow);
+    }
+    .brand .logo{
+      width: 34px; height: 34px; border-radius: 10px;
+      background: conic-gradient(from 210deg, #2f6af3, #22d3ee, #22c55e, #2f6af3);
+      filter: saturate(1.2);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.18), 0 6px 16px rgba(0,0,0,.25);
+    }
+    .brand .title{ display:flex; flex-direction:column; line-height:1.15; }
+    .brand .title b{ font-size: 18px; letter-spacing:.3px; }
+    .brand .badge{
+      margin-top: 2px;
+      display:inline-flex; gap:8px; align-items:center; font-size:12px; color:var(--subtext);
+      background: linear-gradient(180deg, var(--muted), transparent);
+      border: 1px solid var(--border); padding:4px 10px; border-radius: 999px;
+    }
+    .theme-toggle{
+      border: var(--glass-stroke);
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: var(--card-shadow);
+      transition: transform .12s ease, filter .12s ease;
+    }
+    .theme-toggle:hover{ transform: translateY(-1px); filter: brightness(1.05) }
+
+    /* ============================== */
+    /*            CONTROLS            */
+    /* ============================== */
+    .panel{
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      border: var(--glass-stroke);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--card-shadow);
+    }
+    .toolbar{
+      display:grid; gap:12px; padding:16px;
+      border-bottom: 1px solid var(--border);
+      grid-template-columns: minmax(230px,1fr) minmax(240px,1fr) auto auto auto;
+      align-items:center;
+    }
+    .select, .button{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      color:var(--text); border:1px solid var(--border);
+      padding:10px 12px; border-radius:12px; font-size:14px;
+      outline: none;
+    }
+    .select:focus, .button:focus{ box-shadow: 0 0 0 3px rgba(123, 180, 255, .25) }
+    .button{
+      cursor:pointer; display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+      transition: transform .12s ease, filter .12s ease;
+    }
+    .button:hover{ transform: translateY(-1px); filter: brightness(1.06) }
+    .button[aria-disabled="true"]{ opacity:.5; pointer-events:none }
+
+    .tabs{
+      justify-self: end;
+      display: inline-flex; padding: 4px;
+      border-radius: 16px; border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      gap:6px;
+    }
+    .tab{
+      padding:10px 14px; border-radius:12px; cursor:pointer; font-weight:700;
+      color:var(--subtext); border: 1px solid transparent; transition:.15s;
+      background: transparent;
+    }
+    .tab[aria-selected="true"]{
+      color:#fff; border-color: rgba(37,99,235,.35);
+      background: var(--primary-grad);
+      box-shadow: 0 8px 18px rgba(37,99,235,.25);
+    }
+
+    .meta{
+      padding:12px 16px; color:var(--subtext); display:flex; gap:12px; align-items:center;
+      font-size:13px;
+      background: linear-gradient(180deg, rgba(255,255,255,.03), transparent);
+    }
+
+    /* ============================== */
+    /*              KPI               */
+    /* ============================== */
+    .cards{ display:grid; gap:12px; grid-template-columns: repeat(3, minmax(0,1fr)); padding:16px }
+    @media (max-width: 900px){ .cards{ grid-template-columns: 1fr } }
+
+    .card{
+      padding:16px; border:1px solid var(--border); border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+    }
+    .card .label{ color:var(--subtext); font-size:12px; letter-spacing:.3px }
+    .card .value{ font-size:28px; font-weight:800; margin-top:6px; letter-spacing:.3px }
+    .card .value.value-with-btn{ display:flex; align-items:center; gap:10px; flex-wrap:wrap }
+    .card .value .value-primary{ font-size:inherit; font-weight:inherit; letter-spacing:inherit }
+    .card .sub{ color:var(--subtext); font-size:12px; margin-top:8px }
+    .chip-btn{
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.01));
+      color:var(--text);
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:600;
+      cursor:pointer;
+      transition: transform .12s ease, filter .12s ease;
+    }
+    .chip-btn:hover:not([disabled]){ transform: translateY(-1px); filter: brightness(1.05) }
+    .chip-btn[aria-expanded="true"]{
+      background: var(--primary-ghost);
+      border-color: rgba(59,130,246,.4);
+      color: var(--accent);
+    }
+    .chip-btn:disabled{ opacity:.5; cursor:not-allowed }
+
+    .pct-wrap{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-top:10px }
+    .pct-badge{
+      min-width: 128px; text-align:center; padding:12px 14px; border-radius:14px; color:white;
+      background:var(--primary-grad); font-size:24px; font-weight:900; letter-spacing:.5px;
+      box-shadow: 0 12px 28px rgba(37,99,235,.28);
+    }
+    .pct-badge.danger{ background:var(--danger-grad); animation:pulseDanger 1.4s infinite ease-in-out; box-shadow: 0 0 0 0 rgba(239,68,68,.35); }
+    @keyframes pulseDanger{ 0%{ transform:scale(1); box-shadow:0 0 0 0 rgba(239,68,68,.35);} 70%{ transform:scale(1.035); box-shadow:0 0 0 16px rgba(239,68,68,0);} 100%{ transform:scale(1); box-shadow:0 0 0 0 rgba(239,68,68,0);} }
+
+    .pct-details{ flex:1 1 auto; min-width:260px }
+    .progress{ height:12px; background:var(--track); border-radius:999px; overflow:hidden; border:1px solid var(--border); }
+    .progress > i{ display:block; height:100%; background:var(--primary-grad); width:0% }
+    .progress.danger > i{ background:var(--danger-grad) }
+
+    /* ============================== */
+    /*         CONTENT SECTIONS       */
+    /* ============================== */
+    .content{ padding:16px }
+    .table-card{ overflow:hidden; border-radius: var(--radius); border:1px solid var(--border); background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)); }
+    .scroll{ max-height:60vh; overflow:auto }
+    table{ border-collapse:separate; border-spacing:0; width:100% }
+    thead th{
+      position:sticky; top:0; z-index:2;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), transparent);
+      backdrop-filter: blur(8px);
+      border-bottom:1px solid var(--border); padding:12px 12px; text-align:left; font-weight:700; color:var(--subtext);
+    }
+    tbody td{ border-bottom:1px solid var(--border); padding:12px 12px; vertical-align:top }
+    tbody tr:hover{ background:rgba(255,255,255,.04) }
+    .nowrap{ white-space:nowrap }
+    .muted{ color:var(--subtext) }
+    .link{ color:var(--accent); text-decoration:none; font-weight:600 }
+    .link:hover{ text-decoration:underline }
+
+    /* ============================== */
+    /*             TILES              */
+    /* ============================== */
+    .scroller{ max-height:50vh; overflow:auto; padding-right:4px }
+    .tiles{ display:grid; gap:12px; grid-template-columns: repeat(2, minmax(0,1fr)); }
+    @media (max-width: 1000px){ .tiles{ grid-template-columns: 1fr } }
+    .tile{ padding:14px; border:1px solid var(--border); border-radius:var(--radius); background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)) }
+    .tile .title{ font-weight:800; margin-bottom:8px; font-size:14px; letter-spacing:.3px }
+    .list-compact{ margin:0; padding:0; list-style:none }
+    .list-compact li{ display:grid; grid-template-columns: 1fr auto; gap:8px; align-items:center; padding:8px 0; border-bottom:1px dashed rgba(128,128,128,.16); }
+    .list-compact li:last-child{ border-bottom:none }
+    .item-name{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
+    .item-hours{ font-variant-numeric: tabular-nums; font-weight:800; text-align:right }
+
+    /* ============================== */
+    /*            TOP LIST            */
+    /* ============================== */
+    .top-grid{ display:grid; grid-template-columns: 1.8fr 1fr; gap:12px }
+    @media (max-width: 1100px){ .top-grid{ grid-template-columns: 1fr } }
+
+    .top-panel{ padding:16px; border:1px solid var(--border); border-radius:var(--radius); background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); display:flex; flex-direction:column; gap:12px; }
+    .top-title{ font-weight:900; font-size:15px; margin-bottom:2px; letter-spacing:.2px }
+
+    .top-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px; }
+    .top-item{ border-bottom:1px dashed rgba(128,128,128,.16); padding-bottom:12px; display:flex; flex-direction:column; gap:8px; }
+    .top-item:last-child{ border-bottom:none; }
+
+    .top-row{ display:grid; grid-template-columns: 1fr auto; align-items:center; gap:8px }
+    .top-key{ font-weight:800; font-size:14px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap }
+    .top-hours{ font-variant-numeric: tabular-nums; font-weight:900; text-align:right; min-width:40px; }
+
+    .top-sub{ display:flex; flex-wrap:wrap; align-items:center; gap:10px; color:var(--subtext); font-size:13px; }
+    .status-badge{ background:var(--badge); border:1px solid var(--border); padding:3px 10px; border-radius:999px; font-size:12px; font-weight:700 }
+    .status-badge.ok{ color:#fff; background:var(--ok-grad); border-color:rgba(22,163,74,.5); }
+
+    .top-desc{ color:var(--subtext); white-space:normal; overflow:visible; display:block; line-height:1.55; max-height:none; }
+    .chips{ display:flex; flex-wrap:wrap; gap:6px; justify-content:flex-start; margin-top:4px }
+    .chip{ font-size:11px; padding:3px 10px; border-radius:999px; background:var(--badge); border:1px solid var(--border); color:var(--subtext); }
+
+    /* ============================== */
+    /*             AUTHORS            */
+    /* ============================== */
+    .author-block{ padding:14px; border:1px solid var(--border); border-radius:var(--radius); margin-bottom:12px; background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)) }
+    .author-head{ display:flex; justify-content:space-between; gap:8px; align-items:baseline; margin-bottom:8px }
+    .author-name{ font-weight:900; letter-spacing:.2px }
+    .author-sub{ color:var(--subtext); font-size:12px; }
+    .author-grid{ display:grid; gap:12px; grid-template-columns:1fr 1fr }
+    @media (max-width: 900px){ .author-grid{ grid-template-columns:1fr } }
+    .table-title{ font-weight:800; margin:6px 0 }
+
+    /* ============================== */
+    /*            SKELETON            */
+    /* ============================== */
+    .skeleton{ display:grid; gap:10px; padding:16px }
+    .sk-line{
+      height: 14px; width: 100%; border-radius: 999px;
+      background: linear-gradient(90deg, rgba(255,255,255,.06), rgba(255,255,255,.18), rgba(255,255,255,.06));
+      animation: sk 1.2s infinite linear; background-size: 200% 100%;
+    }
+    @keyframes sk{ 0%{ background-position:200% 0 } 100%{ background-position:-200% 0 } }
+
+    /* ============================== */
+    /*           ACCESSIBILITY        */
+    /* ============================== */
+    @media (prefers-reduced-motion: reduce){
+      *{ animation: none !important; transition: none !important }
+    }
+
+    /* ============================== */
+    /*       SPRINT PICKER (modal)    */
+    /* ============================== */
+    #sprintPickerModal{ position:fixed; inset:0; z-index:60; }
+    #sprintPickerModal[hidden]{ display:none !important; }
+    .sp-overlay{ position:absolute; inset:0; background:rgba(0,0,0,.45); backdrop-filter: blur(2px); }
+    .sp-dialog{
+      position:relative; margin:4vh auto; max-width:1100px;
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      border: var(--glass-stroke); border-radius: var(--radius-lg); box-shadow: var(--card-shadow);
+      overflow:hidden;
+    }
+    .sp-head{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 16px; border-bottom:1px solid var(--border); }
+    .sp-title{ font-weight:900; letter-spacing:.2px }
+    .sp-body{ padding:16px; }
+    .sp-legend{ display:flex; align-items:center; gap:8px; color:var(--subtext); font-size:12px; margin-bottom:8px }
+    .sp-pill{
+      display:inline-block; height:14px; min-width:40px; border-radius:999px;
+      background: var(--primary-grad); box-shadow: 0 4px 10px rgba(37,99,235,.25);
+    }
+    .sp-pill.demo{ width:60px }
+
+    .sp-year{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:12px; }
+    @media (max-width: 1000px){ .sp-year{ grid-template-columns: 1fr } }
+
+    .sp-month{
+      border:1px solid var(--border); border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      padding:10px; display:grid; gap:8px;
+    }
+    .sp-month h4{ margin:0; font-size:13px; font-weight:800; color:var(--subtext); letter-spacing:.3px }
+
+    .sp-row{
+      display:grid;
+      grid-template-columns: repeat(31, 1fr);
+      gap:2px;
+      position:relative;
+      padding-top:4px;
+    }
+    .sp-day{ height:10px; border-radius:2px; background: var(--muted); }
+    .sp-sprint{
+      position:absolute; height:18px; margin-top:-4px;
+      border-radius:999px; padding:0 10px; display:flex; align-items:center; gap:6px;
+      border:1px solid rgba(37,99,235,.35); background: var(--primary-grad);
+      color:#fff; font-size:12px; font-weight:800; cursor:pointer;
+      box-shadow: 0 6px 16px rgba(37,99,235,.25);
+      transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .sp-sprint[data-selected="true"]{ outline: 2px solid #fff8; }
+    .sp-sprint:hover{ transform: translateY(-1px); filter: brightness(1.05) }
+    .sp-tag{ opacity:.9 }
+
+    .sp-month .sp-row[data-month-days="28"] .sp-sprint,
+    .sp-month .sp-row[data-month-days="29"] .sp-sprint,
+    .sp-month .sp-row[data-month-days="30"] .sp-sprint,
+    .sp-month .sp-row[data-month-days="31"] .sp-sprint{ max-width: calc(100% - 4px); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title">
+          <b>JIRA Worklogs — Sprint Summary</b>
+          <span class="badge"><span>Cache on</span><span>•</span><span>cvs & JIRA refresh</span></span>
+        </div>
+      </div>
+      <button id="themeToggle" class="theme-toggle" title="Przełącz motyw">🌓</button>
+    </div>
+
+    <!-- Main panel -->
+    <div class="panel">
+      <!-- Controls -->
+      <div class="toolbar">
+        <!-- Sprint (button + hidden select for compatibility) -->
+        <button id="openSprintPicker" class="button" type="button" aria-haspopup="dialog" aria-controls="sprintPickerModal">
+          🗓️ Wybierz sprint
+        </button>
+        <select id="sprintPreset" class="select" aria-label="Wybierz sprint" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+          <option value="">⏱️ Wybierz sprint…</option>
+        </select>
+
+        <select id="groupSelect" class="select" aria-label="Wybierz grupę">
+          <option value="">👥 Wybierz zespół…</option>
+        </select>
+
+        <div class="tabs" role="tablist" aria-label="Widoki">
+          <button class="tab" id="tab-table" aria-selected="false" role="tab">Tabela</button>
+          <button class="tab" id="tab-summary" aria-selected="true" role="tab">Podsumowanie</button>
+          <button class="tab" id="tab-authors" aria-selected="false" role="tab">Autorzy</button>
+        </div>
+
+        <input id="importFile" type="file" accept=".csv,text/csv" style="display:none">
+<a id="importBtn" class="button" href="#" role="button">⬆️ Import</a>
+        <a id="refresh" class="button" href="#" role="button">🔁 Refresh</a>
+        <a id="csvLink" class="button" href="#" aria-disabled="true" data-disabled="true" style="display:none">⬇️ Export CSV</a>
+
+      </div>
+
+      <div id="meta" class="meta">Wybierz <b>sprint</b> i <b>zespół</b>, aby załadować dane.</div>
+
+      <!-- KPIs -->
+      <div id="kpis" class="cards" style="display:none">
+        <!-- Kafelek 1: Łącznie godzin -->
+        <div class="card">
+          <div class="label">Łącznie godzin</div>
+          <div id="kpiHours" class="value">0</div>
+          <div class="pct-wrap">
+            <div id="kpiPctBadge" class="pct-badge">—</div>
+            <div class="pct-details">
+              <div id="kpiPctProgress" class="progress"><i id="kpiPctBar" style="width:0%"></i></div>
+              <div id="kpiHoursPct" class="sub">—</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kafelek 2: Sprint (NOWY) -->
+        <div class="card">
+          <div class="label">Sprint</div>
+          <div class="value value-with-btn">
+            <span id="kpiSprintCode" class="value-primary">—</span>
+            <button id="topTasksToggle" class="chip-btn" type="button" aria-expanded="false" aria-controls="topTasksPanel" disabled>Top tasks</button>
+          </div>
+          <div class="sub" id="kpiSprintDates">—</div>
+        </div>
+      </div>
+
+      <!-- Loader -->
+      <div id="loader" class="skeleton" style="display:none">
+        <div class="sk-line" style="width:40%"></div>
+        <div class="sk-line" style="width:80%"></div>
+        <div class="sk-line" style="width:60%"></div>
+      </div>
+
+      <!-- TABLE VIEW -->
+      <div id="tableWrap" class="content" style="display:none">
+        <div class="table-card">
+          <div class="scroll">
+            <table id="tbl">
+              <thead>
+                <tr>
+                  <th>Started</th>
+                  <th>Issue</th>
+                  <th>Summary</th>
+                  <th>Type</th>
+                  <th>Priority</th>
+                  <th>Status</th>
+                  <th>Assignee</th>
+                  <th>Author</th>
+                  <th>Sprint</th>
+                  <th>Hours</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUMMARY VIEW -->
+      <div id="insightsWrap" class="content" style="display:none">
+        <div id="insights"></div>
+      </div>
+
+      <!-- AUTHORS VIEW -->
+      <div id="authorsWrap" class="content" style="display:none"></div>
+
+      <!-- TOP TASKS PANEL -->
+      <div id="topTasksPanel" class="content" style="display:none">
+        <div id="topTasksInfo" class="meta" style="margin:0 0 8px 0"></div>
+        <div id="topTasksWrap" style="display:grid; gap:12px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sprint Picker (modal) -->
+  <div id="sprintPickerModal" role="dialog" aria-modal="true" aria-labelledby="sprintPickerTitle" hidden>
+    <div class="sp-overlay" data-close></div>
+    <div class="sp-dialog" role="document">
+      <div class="sp-head">
+        <div class="sp-title" id="sprintPickerTitle">Wybierz sprint (widok roku)</div>
+        <div class="sp-actions">
+          <button class="button" id="spClose" type="button">✖︎ Zamknij</button>
+        </div>
+      </div>
+      <div class="sp-body">
+        <div class="sp-legend">
+          <span class="sp-pill demo"></span> Sprint
+        </div>
+        <div id="spYearGrid" class="sp-year"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let csvVersion = 0; // rośnie po każdym Refresh, wymusza świeży download CSV
+    /* ============ THEME ============ */
+    const themeBtn = document.getElementById('themeToggle');
+    function setTheme(mode){
+      document.documentElement.setAttribute('data-theme', mode);
+      localStorage.setItem('themeMode', mode);
+      themeBtn.textContent = mode === 'dark' ? '🌒' : mode === 'light' ? '🌞' : '🌓';
+    }
+    (function initTheme(){
+      const saved = localStorage.getItem('themeMode') || 'dark';
+      setTheme(saved);
+    })();
+    themeBtn.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme') || 'auto';
+      setTheme(cur === 'auto' ? 'dark' : cur === 'dark' ? 'light' : 'auto');
+    });
+
+    // ===== IMPORT CSV z serwletu =====
+const importBtn = document.getElementById('importBtn');
+const importFile = document.getElementById('importFile');
+
+importBtn.addEventListener('click', (e)=>{
+  e.preventDefault();
+  importFile.click();
+});
+const btnTopTasks   = document.getElementById('topTasksToggle');
+const topTasksPanel = document.getElementById('topTasksPanel');
+const topInfo       = document.getElementById('topTasksInfo');
+const topWrap       = document.getElementById('topTasksWrap');
+
+async function loadTopTasks(sprintOverride) {
+  const sprint = sprintOverride || sprintObj();
+  const minh  = 16;   // minimalny próg godzin
+  const limit = 20;   // ile rekordów na team
+
+  if (!sprint) {
+    topInfo.textContent = 'Wybierz sprint, aby zobaczyć top zadania dla wszystkich zespołów.';
+    topWrap.innerHTML = '';
+    return;
+  }
+
+  topInfo.textContent = 'Ładuję…';
+  topWrap.innerHTML = '';
+
+  try {
+    if (btnTopTasks) {
+      btnTopTasks.setAttribute('aria-busy', 'true');
+      btnTopTasks.disabled = true;
+    }
+    const q = new URLSearchParams({ from: sprint.from, to: sprint.to, minh, limit, t: String(csvVersion) });
+    const res = await fetch(`/api/sprint-top?${q.toString()}`, { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+
+    topInfo.textContent = `Zakres ${data.from} → ${data.to}. Zespoły z CSV: ${data.teams_with_csv}/${data.teams_considered}. Min ≥ ${data.minh}h.`;
+
+    if (!data.results.length) {
+      topWrap.innerHTML = '<div class="muted" style="opacity:.8">Brak zadań spełniających warunki (≥16h, bez WORKLOG) lub brak CSV u zespołów.</div>';
+      return;
+    }
+
+    topWrap.innerHTML = data.results.map(team => {
+      const rows = team.items.map(it => `
+        <tr>
+          <td class="nowrap"><a class="link" href="${it.url}" target="_blank" rel="noopener">${it.issue_key}</a></td>
+          <td>${(it.issue_summary || '').replace(/</g,'&lt;')}</td>
+          <td class="nowrap" style="text-align:center">${it.status || ''}</td>
+          <td class="nowrap" style="text-align:right; font-variant-numeric: tabular-nums">${it.hours}h</td>
+        </tr>
+      `).join('');
+
+      return `
+        <div class="table-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; border-bottom:1px solid var(--border);">
+            <div style="font-weight:800">${team.team_label}</div>
+            <div class="muted" style="font-size:12px">${team.source_file}</div>
+          </div>
+          <div class="scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Issue</th>
+                  <th>Summary</th>
+                  <th style="width:120px; text-align:center">Status</th>
+                  <th style="width:80px; text-align:right">Hours</th>
+                </tr>
+              </thead>
+              <tbody>${rows}</tbody>
+            </table>
+          </div>
+        </div>`;
+    }).join('');
+  } catch (e) {
+    console.error(e);
+    topInfo.textContent = 'Błąd ładowania.';
+    topWrap.innerHTML = `<pre style="white-space:pre-wrap; background:rgba(239,68,68,.1); border:1px solid var(--border); padding:8px;">${(e && e.message) || e}</pre>`;
+  } finally {
+    if (btnTopTasks) {
+      btnTopTasks.removeAttribute('aria-busy');
+      if (!btnTopTasks.hasAttribute('data-force-disabled')) btnTopTasks.disabled = false;
+    }
+  }
+}
+
+function hideTopTasksPanel(clear=false){
+  if (topTasksPanel){
+    topTasksPanel.style.display = 'none';
+  }
+  if (btnTopTasks){
+    btnTopTasks.setAttribute('aria-expanded','false');
+  }
+  if (clear){
+    topInfo.textContent = '';
+    topWrap.innerHTML = '';
+  }
+}
+
+async function showTopTasks(){
+  if (!btnTopTasks || !topTasksPanel) return;
+  setActiveTab(null);
+  hideAllViews();
+  updateCsvHrefAndRange();
+  kpis.style.display = 'none';
+  topTasksPanel.style.display = 'block';
+  btnTopTasks.setAttribute('aria-expanded','true');
+  metaEl.textContent = 'Top tasks — globalne zestawienie sprintu.';
+  await loadTopTasks();
+}
+
+if (btnTopTasks){
+  btnTopTasks.addEventListener('click', async ()=>{
+    if (btnTopTasks.disabled) return;
+    const isVisible = topTasksPanel && topTasksPanel.style.display !== 'none';
+    if (isVisible) return;
+    await showTopTasks();
+  });
+}
+
+importFile.addEventListener('change', async ()=>{
+  const f = filtersObj();
+  if (!f){ metaEl.textContent = 'Najpierw wybierz sprint i zespół.'; importFile.value=''; return; }
+  const file = importFile.files[0];
+  if (!file){ return; }
+
+  try{
+    setLoading(true);
+    metaEl.textContent = 'Importuję CSV z serwletu…';
+
+    const text = await file.text();
+    const q = new URLSearchParams({ from:f.from, to:f.to, group:f.group }).toString();
+    const resp = await fetch('/api/import-csv?' + q, {
+      method:'POST',
+      headers: { 'Content-Type':'text/csv' },
+      body: text
+    });
+    const data = await resp.json();
+    if (!resp.ok) throw new Error(data?.message || resp.statusText);
+
+    // podbij wersję, żeby pobrać świeży plik (external ma priorytet)
+    csvVersion++;
+    reportCache.clear();
+    metaEl.textContent = `Zaimportowano ${data.mappedRows||0} wierszy (źródło: serwlet).`;
+
+    // przeładuj aktywny widok
+    const topActive = topTasksPanel && topTasksPanel.style.display !== 'none';
+    const active = [tabSummary, tabAuthors, tabTable].find(b=>b.getAttribute('aria-selected')==='true');
+    if (topActive) await showTopTasks();
+    else if (active===tabAuthors) await showAuthors();
+    else if (active===tabTable) await showTable();
+    else await showSummary();
+
+
+  } catch(err){
+    metaEl.textContent = 'Import nieudany: ' + (err?.message || String(err));
+  } finally {
+    setLoading(false);
+    importFile.value = '';
+  }
+});
+
+
+    /* ======== HOLIDAYS (PL 2025) ======== */
+    const PL_HOLIDAYS_2025 = new Set([
+      '2025-01-01','2025-01-06','2025-04-20','2025-04-21','2025-05-01','2025-05-03',
+      '2025-06-08','2025-06-19','2025-08-15','2025-11-01','2025-11-11','2025-12-25','2025-12-26'
+    ]);
+    function isWeekend(d){ const wd = d.getUTCDay(); return wd===0 || wd===6; }
+    function fmt(d){ return d.toISOString().slice(0,10); }
+    function workingDays(fromIso, toIso){
+      const from=new Date(fromIso+'T00:00:00Z'), to=new Date(toIso+'T00:00:00Z'); let cnt=0;
+      for (let d=new Date(from); d<=to; d.setUTCDate(d.getUTCDate()+1)){
+        const dayIso=fmt(d); if (isWeekend(d)) continue; if (PL_HOLIDAYS_2025.has(dayIso)) continue; cnt++;
+      }
+      return cnt;
+    }
+
+    /* ============ DATA & STATE ============ */
+    const sprintPresets = [
+      { code: "2.3", start: "06/05/2025", end: "19/05/2025" },
+      { code: "2.4", start: "20/05/2025", end: "02/06/2025" },
+      { code: "2.5", start: "03/06/2025", end: "16/06/2025" },
+      { code: "2.6", start: "17/06/2025", end: "30/06/2025" },
+      { code: "3.1", start: "01/07/2025", end: "14/07/2025" },
+      { code: "3.2", start: "15/07/2025", end: "28/07/2025" },
+      { code: "3.3", start: "29/07/2025", end: "11/08/2025" },
+      { code: "3.4", start: "12/08/2025", end: "25/08/2025" },
+      { code: "3.5", start: "26/08/2025", end: "08/09/2025" },
+      { code: "3.6", start: "09/09/2025", end: "22/09/2025" },
+      { code: "3.7", start: "23/09/2025", end: "06/10/2025" },
+      { code: "4.1", start: "07/10/2025", end: "20/10/2025" },
+      { code: "4.2", start: "21/10/2025", end: "03/11/2025" },
+      { code: "4.3", start: "04/11/2025", end: "17/11/2025" },
+      { code: "4.4", start: "18/11/2025", end: "01/12/2025" },
+      { code: "4.5", start: "02/12/2025", end: "15/12/2025" },
+      { code: "4.6", start: "16/12/2025", end: "29/12/2025" },
+    ];
+    const toIso = (dmy) => { const [d,m,y] = dmy.split('/'); return `${y}-${m}-${d}`; };
+    const presetEl = document.getElementById('sprintPreset');
+    sprintPresets.forEach((p, i) => {
+      const opt = document.createElement('option'); opt.value = i; opt.textContent = `${p.code} (${p.start} – ${p.end})`;
+      presetEl.appendChild(opt);
+    });
+
+    const reportCache   = new Map(); // key -> {count, hours_total, rows}
+    const metaEl = document.getElementById('meta');
+    const loader = document.getElementById('loader');
+    const kpis = document.getElementById('kpis');
+    const kpiHours = document.getElementById('kpiHours');
+    const kpiHoursPct = document.getElementById('kpiHoursPct');
+    const kpiPctBadge = document.getElementById('kpiPctBadge');
+    const kpiPctBar = document.getElementById('kpiPctBar');
+    const kpiPctProgress = document.getElementById('kpiPctProgress');
+    const kpiSprintCode = document.getElementById('kpiSprintCode');
+    const kpiSprintDates = document.getElementById('kpiSprintDates');
+
+    const tableWrap = document.getElementById('tableWrap');
+    const insightsWrap = document.getElementById('insightsWrap');
+    const insightsEl = document.getElementById('insights');
+    const authorsWrap = document.getElementById('authorsWrap');
+
+    const tabTable = document.getElementById('tab-table');
+    const tabSummary = document.getElementById('tab-summary');
+    const tabAuthors = document.getElementById('tab-authors');
+
+    function setLoading(on){ loader.style.display = on ? 'grid' : 'none'; }
+    function setActiveTab(btn){
+      [tabTable, tabSummary, tabAuthors].forEach(b=>{
+        if (b) b.setAttribute('aria-selected', String(b===btn));
+      });
+    }
+    function filtersObj(){
+      const sIdx = presetEl.value;
+      const group = document.getElementById('groupSelect').value;
+      if (sIdx === '' || !group) return null;
+      const sp = sprintPresets[Number(sIdx)];
+      if (!sp) return null;
+      return { from: toIso(sp.start), to: toIso(sp.end), group, sIdx: Number(sIdx) };
+    }
+    const filtersKey = ({from,to,group}) => JSON.stringify({from,to,group});
+    function sprintObj(){
+      const sIdx = presetEl.value;
+      if (sIdx === '' || sIdx == null) return null;
+      const sp = sprintPresets[Number(sIdx)];
+      if (!sp) return null;
+      return { from: toIso(sp.start), to: toIso(sp.end), sIdx: Number(sIdx), code: sp.code, start: sp.start, end: sp.end };
+    }
+
+    function updateCsvHref(){
+      const f = filtersObj();
+      const link = document.getElementById('csvLink');
+      if (!link) return; // <— ważne
+
+      if (!f){
+        link.setAttribute('aria-disabled','true');
+        link.dataset.disabled='true';
+        link.href = '#';
+      } else {
+        link.removeAttribute('aria-disabled');
+        link.dataset.disabled='false';
+        const q = new URLSearchParams({from:f.from, to:f.to, group:f.group, t:String(csvVersion)}).toString();
+        link.href = '/api/report.csv?' + q;
+      }
+    }
+
+    /* ======== MEMBERS DIRECTORY ======== */
+    const membersCountCache = new Map();   // groupLabel -> count
+    const membersDir = new Map();          // id/emailLower -> displayName
+
+    function prettyNameFromEmail(email){
+      const base = String(email||'').split('@')[0];
+      if (!base) return email||'(unknown)';
+      const parts = base.split(/[._-]+/).map(s=>s.charAt(0).toUpperCase()+s.slice(1));
+      return parts.join(' ');
+    }
+
+    function resolveDisplayName(author){
+      if (!author) return '(unknown)';
+      const key = String(author).toLowerCase();
+      if (membersDir.has(key)) return membersDir.get(key);
+      if (author.includes('@')) return prettyNameFromEmail(author);
+      return author; // fallback accountId
+    }
+
+    async function loadMembersDirectoryForGroup(groupLabel){
+      try{
+        const res = await fetch('/api/debug/members?group=' + encodeURIComponent(groupLabel));
+        if (!res.ok) throw new Error('members fetch failed');
+        const data = await res.json();
+        const members = Array.isArray(data.members) ? data.members : [];
+        for (const m of members){
+          const disp = m.displayName || prettyNameFromEmail(m.emailAddress||'');
+          if (m.emailAddress) membersDir.set(String(m.emailAddress).toLowerCase(), disp);
+          if (m.accountId)    membersDir.set(String(m.accountId).toLowerCase(), disp);
+        }
+        membersCountCache.set(groupLabel, members.length);
+        return members.length;
+      }catch{
+        membersCountCache.set(groupLabel, 0);
+        return 0;
+      }
+    }
+
+    async function getMembersCount(groupLabel){
+      if (membersCountCache.has(groupLabel)) return membersCountCache.get(groupLabel);
+      return loadMembersDirectoryForGroup(groupLabel);
+    }
+
+    /* ====================== CSV-first helpers ====================== */
+    //let forceJiraNextFetch = false; // ustawiane przy "Refresh"
+
+    function parseCsv(text){
+      const rows = [];
+      let i = 0, field = '', row = [], inQuotes = false;
+      while (i < text.length){
+        const c = text[i++];
+        if (inQuotes){
+          if (c === '"'){
+            if (text[i] === '"'){ field += '"'; i++; }
+            else inQuotes = false;
+          } else field += c;
+        } else {
+          if (c === '"'){ inQuotes = true; }
+          else if (c === ','){ row.push(field); field = ''; }
+          else if (c === '\n' || c === '\r'){
+            if (field.length || row.length){ row.push(field); rows.push(row); row = []; field=''; }
+            if (c === '\r' && text[i] === '\n') i++;
+          } else field += c;
+        }
+      }
+      if (field.length || row.length) { row.push(field); rows.push(row); }
+      return rows;
+    }
+
+    function csvRowsToObjects(csv){
+      if (!csv.length) return [];
+      const header = csv[0].map(h => String(h).trim());
+
+      return csv.slice(1).filter(r => r.length>1).map(r=>{
+        const o = {};
+        for (let c=0;c<header.length;c++){
+          o[header[c]] = r[c] ?? '';
+        }
+        const get = (name, alts=[])=>{
+          const L = [name, ...alts].map(x=>x.toLowerCase());
+          for (const key of Object.keys(o)){
+            if (L.includes(String(key).toLowerCase())) return o[key];
+          }
+          return '';
+        };
+        const started = get('started');
+        const issue_key = get('issue_key',['issueKey','key']);
+        const issue_summary = get('issue_summary',['summary']);
+        const issue_type = get('issue_type',['type']);
+        const priority = get('priority');
+        const status = get('status');
+        const assignee_email = get('assignee_email',['assigneeEmail','assignee']);
+        const author_email = get('author_email',['authorEmail']);
+        const author_account_id = get('author_account_id',['authorAccountId','author']);
+        const sprint = get('sprint');
+        const tssRaw = get('time_spent_seconds',['timeSpentSeconds','timespentseconds','time_spent']);
+
+        return {
+          started,
+          issue_key,
+          issue_summary,
+          issue_type,
+          priority,
+          status,
+          assignee_email,
+          author_email,
+          author_account_id,
+          sprint,
+          time_spent_seconds: Number(tssRaw||0)
+        };
+      });
+    }
+
+    function csvToDataset(text){
+      const rows = csvRowsToObjects(parseCsv(text));
+      const secondsTotal = rows.reduce((s,r)=> s + (Number(r.time_spent_seconds)||0), 0);
+      return { count: rows.length, hours_total: secondsTotal / 3600, rows };
+    }
+
+    /* ============ RENDER HELPERS ============ */
+    function setKpis(hoursTotal=0, pct=NaN, pctText='—'){
+      kpis.style.display = 'grid';
+      kpiHours.textContent = Math.round(hoursTotal||0).toString(); /* 0 miejsc */
+      const isDanger = !isNaN(pct) && pct < 80;
+      kpiPctBadge.classList.toggle('danger', isDanger);
+      kpiPctProgress.classList.toggle('danger', isDanger);
+      if (isNaN(pct)){
+        kpiPctBadge.textContent = '—';
+        kpiHoursPct.textContent = pctText || '—';
+        kpiPctBar.style.width = '0%';
+      } else {
+        const clamp = Math.max(0, Math.min(200, pct));
+        kpiPctBadge.textContent = `${pct.toFixed(1)}%`;
+        kpiHoursPct.textContent = pctText;
+        kpiPctBar.style.width = `${Math.min(100, clamp)}%`;
+      }
+      updateSprintTile();
+    }
+
+    function updateSprintTile(){
+      const sprint = sprintObj();
+      if (!sprint){
+        kpiSprintCode.textContent = '—';
+        kpiSprintDates.textContent = '—';
+        if (btnTopTasks){
+          btnTopTasks.setAttribute('data-force-disabled','true');
+          btnTopTasks.disabled = true;
+        }
+        hideTopTasksPanel(true);
+        return;
+      }
+      kpiSprintCode.textContent = `Sprint ${sprint.code}`;
+      kpiSprintDates.textContent = `${sprint.start} – ${sprint.end}`;
+      if (btnTopTasks){
+        btnTopTasks.removeAttribute('data-force-disabled');
+        btnTopTasks.disabled = false;
+      }
+    }
+
+    function renderTable(data){
+      metaEl.textContent = `Wierszy: ${data.count ?? 0} • Łącznie godzin: ${Math.round(data.hours_total ?? 0)}`;
+      tableWrap.style.display = 'block';
+      const tb = document.querySelector('#tbl tbody');
+      tb.innerHTML = '';
+      (data.rows || []).forEach(r=>{
+        const hours = Math.round((r.time_spent_seconds || 0) / 3600);
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="nowrap">${(r.started || '').slice(0,19).replace('T',' ')}</td>
+          <td class="nowrap"><a class="link" href="/redirect?key=${encodeURIComponent(r.issue_key)}" target="_blank">${r.issue_key}</a></td>
+          <td>${r.issue_summary || ''}</td>
+          <td>${r.issue_type || ''}</td>
+          <td>${r.priority || ''}</td>
+          <td>${r.status || ''}</td>
+          <td class="nowrap">${r.assignee_email || ''}</td>
+          <td class="nowrap">${resolveDisplayName(r.author_email || r.author_account_id)}</td>
+          <td class="nowrap">${r.sprint || ''}</td>
+          <td class="nowrap" style="text-align:right; font-variant-numeric:tabular-nums">${hours}</td>
+        `;
+        tb.appendChild(tr);
+      });
+    }
+
+    const li = (name, hours) => `<li><span class="item-name" title="${name}">${name}</span><span class="item-hours">${Math.round(hours)} h</span></li>`;
+    const truncate = (text, max=260) => {
+      if (!text) return '';
+      const t = String(text).replace(/\s+/g,' ').trim();
+      return t.length > max ? t.slice(0, max-1) + '…' : t;
+    };
+    const isOkStatus = (s) => /(^|\s)(done|completed)(\s|$)/i.test(String(s || ''));
+
+   function renderInsightsFromSummaryObject(s){
+  metaEl.textContent = 'Podsumowanie (OK)';
+
+  const blocks = [];
+
+  // === TOP ISSUES (z opisami) ===
+  if (Array.isArray(s.top_issues) && s.top_issues.length){
+    const main = [], worklog = [];
+    for (const i of s.top_issues){
+      const proj = String(i.key || '').split('-')[0].toUpperCase();
+      (proj === 'WORKLOG' ? worklog : main).push(i);
+    }
+    const renderTop = (arr, title, withDesc=false) => `
+      <div class="top-panel">
+        <div class="top-title">${title}</div>
+        <ol class="top-list">
+          ${arr.slice(0,10).map(i=>{
+            const hours = Math.round(i.hours||0);
+            const ok = isOkStatus(i.status);
+            const authorsClean = (i.authors||'').split(',').map(x=>resolveDisplayName(x.trim())).filter(Boolean);
+            return `
+            <li class="top-item">
+              <div class="top-row">
+                <div class="top-key">
+                  <a class="link" href="/redirect?key=${encodeURIComponent(i.key)}" target="_blank">${i.key}</a>
+                </div>
+                <div class="top-hours">${hours} h</div>
+              </div>
+              <div class="top-sub">
+                <span>${i.summary || ''}</span>
+                <span class="status-badge ${ok ? 'ok' : ''}">${i.status || ''}</span>
+              </div>
+              ${withDesc && i.description ? `<div class="top-desc">${truncate(i.description, 600)}</div>` : ''}
+              ${withDesc && authorsClean.length
+                ? `<div class="chips">${
+                    authorsClean.slice(0,8).map(a=>`<span class="chip">${a}</span>`).join('')
+                  }${authorsClean.length>8?`<span class="chip">+${authorsClean.length-8}</span>`:''}</div>`
+                : ''}
+            </li>`;
+          }).join('')}
+        </ol>
+      </div>`;
+    blocks.push(`<div class="top-grid">
+      ${renderTop(main, 'TOP zadania — Główne projekty', true)}
+      ${renderTop(worklog, 'TOP zadania — WORKLOG', false)}
+    </div>`);
+  }
+
+  // === Kafelki: projekty + typy ===
+  const projHtml = `<div class="tile">
+    <div class="title">Projekty (wszystkie)</div>
+    <div class="scroller"><ul class="list-compact">
+      ${s.by_project.map(p=>li(p.project||'(?)', p.hours)).join('')}
+    </ul></div>
+  </div>`;
+
+  const typeHtml = `<div class="tile">
+    <div class="title">Typy zadań</div>
+    <ul class="list-compact">
+      ${s.by_type.slice(0,8).map(t=>li(t.type||'(brak)', t.hours)).join('')}
+    </ul>
+  </div>`;
+
+  blocks.push(`<div class="tiles">${projHtml}${typeHtml}</div>`);
+  insightsEl.innerHTML = blocks.join('\n');
+  insightsWrap.style.display = 'block';
+}
+
+    function buildSummaryFromRows(rows){
+      const hours_total = rows.reduce((s,r)=>s+(r.time_spent_seconds||0),0)/3600;
+      const by_project = new Map(), by_type = new Map(), topIssues = new Map(), issueAuthors = new Map(), issueDesc = new Map(), issueStatus = new Map(), issueSummary = new Map();
+
+      for (const r of rows){
+        const proj = (r.issue_key||'').split('-')[0] || '(?)';
+        const hrs = (r.time_spent_seconds||0)/3600;
+
+        by_project.set(proj,(by_project.get(proj)||0)+hrs);
+        by_type.set(r.issue_type||'(brak)',(by_type.get(r.issue_type||'(brak)')||0)+hrs);
+
+        const issueKey = r.issue_key;
+        if (!issueAuthors.has(issueKey)) issueAuthors.set(issueKey, new Set());
+        issueAuthors.get(issueKey).add(r.author_email || r.author_account_id || '(?)');
+
+        if (r.issue_description && !issueDesc.has(issueKey)) issueDesc.set(issueKey, r.issue_description);
+        if (r.status && !issueStatus.has(issueKey)) issueStatus.set(issueKey, r.status);
+        if (r.issue_summary && !issueSummary.has(issueKey)) issueSummary.set(issueKey, r.issue_summary);
+
+        const cur = topIssues.get(issueKey) || {key:issueKey, summary:r.issue_summary||'', status:r.status||'', hours:0};
+        cur.hours += hrs; topIssues.set(issueKey, cur);
+      }
+
+      const mapToArr=(m,k)=>Array.from(m.entries()).map(([n,v])=>({[k]:n,hours:v})).sort((a,b)=>b.hours-a.hours);
+      const topArr = Array.from(topIssues.values())
+        .map(x=>({
+          ...x,
+          summary: issueSummary.get(x.key) || x.summary || '',
+          status: issueStatus.get(x.key) || x.status || '',
+          description: issueDesc.get(x.key) || '',
+          authors: Array.from(issueAuthors.get(x.key)||[]).join(',')
+        }))
+        .sort((a,b)=>b.hours-a.hours)
+        .slice(0,20);
+
+      return {
+        hours_total,
+        by_project: mapToArr(by_project,'project'),
+        by_type: mapToArr(by_type,'type'),
+        top_issues: topArr
+      };
+    }
+
+    function membersLabel(){ return document.getElementById('groupSelect').value || ''; }
+
+    async function computeHoursPct(hoursTotal){
+      const f = filtersObj();
+      if (!f) return { pct: NaN, text: '—' };
+
+      const wd = workingDays(f.from, f.to);
+
+      const key = filtersKey(f);
+      const dataset = reportCache.get(key);
+      let activeCount = 0;
+
+      if (dataset && Array.isArray(dataset.rows)) {
+        const authors = new Set();
+        for (const r of dataset.rows) {
+          const id = (r.author_email || r.author_account_id || '').toLowerCase();
+          if (id) authors.add(id);
+        }
+        activeCount = authors.size;
+      }
+
+      const members = activeCount || await getMembersCount(membersLabel());
+      const potential = wd * 8 * (members || 0);
+
+      if (!potential) {
+        return { pct: NaN, text: `${wd} dni × 8h × ${members} os. = 0h` };
+      }
+
+      const pct = (hoursTotal / potential) * 100;
+      const text = `${Math.round(hoursTotal)}h z ${Math.round(potential)}h • ${wd} dni × 8h × ${members} os.`;
+      return { pct, text };
+    }
+
+    /* ============ FETCH & CACHE (CSV-first, fallback do JIRA) ============ */
+  async function fetchReportCached(){
+  const f = filtersObj();
+  if (!f) return {empty:true, data:{count:0,hours_total:0,rows:[]}};
+  const key = filtersKey(f);
+  if (reportCache.has(key)) return {fromCache:true, data:reportCache.get(key)};
+
+  setLoading(true);
+  const qBase = { from: f.from, to: f.to, group: f.group, t: String(csvVersion) };
+  let data = {count:0, hours_total:0, rows:[]};
+
+  // 1) CSV najpierw (z cache-bustingiem)
+  try{
+    const csvRes = await fetch('/api/report.csv?' + new URLSearchParams(qBase).toString(), { headers: { 'Accept':'text/csv' }});
+    if (csvRes.ok){
+      const text = await csvRes.text();
+      if (text && text.trim().length){
+        data = csvToDataset(text);
+      }
+    }
+  }catch{}
+
+  // 2) fallback JSON (też z cache-bustingiem)
+  if (!data.rows || data.rows.length === 0){
+    const jsRes = await fetch('/api/report?' + new URLSearchParams(qBase).toString());
+    if (jsRes.status !== 204){
+      data = await jsRes.json();
+    } else {
+      data = {count:0, hours_total:0, rows:[]};
+    }
+  }
+
+  reportCache.set(key, data);
+  setLoading(false);
+  return {fromCache:false, data};
+}
+
+function hideAllViews(){
+  tableWrap.style.display='none';
+  insightsWrap.style.display='none';
+  authorsWrap.style.display='none';
+  hideTopTasksPanel();
+}
+
+    /* ============ VIEW SWITCH ============ */
+    function updateCsvHrefAndRange(){ updateCsvHref(); }
+
+    async function showTable(){
+      setActiveTab(tabTable);
+      hideAllViews();
+      updateCsvHrefAndRange();
+
+      const f = filtersObj();
+      if (!f){
+        tableWrap.style.display='none';
+        kpis.style.display='none';
+        metaEl.innerHTML = 'Wybierz <b>sprint</b> i <b>zespół</b>, aby załadować dane.';
+        updateSprintTile();
+        return;
+      }
+
+      const dataset = (await fetchReportCached()).data;
+      if (typeof dataset.count==='undefined'){ tableWrap.style.display='none'; return; }
+
+      const { pct, text } = await computeHoursPct(dataset.hours_total || 0);
+      setKpis(dataset.hours_total || 0, pct, text);
+      renderTable(dataset);
+    }
+
+    async function showSummary(){
+      setActiveTab(tabSummary);
+      hideAllViews();
+      updateCsvHrefAndRange();
+
+      const f = filtersObj();
+      if (!f){ insightsWrap.style.display='none'; kpis.style.display='none'; metaEl.textContent='Wybierz sprint i zespół…'; updateSprintTile(); return; }
+
+      await loadMembersDirectoryForGroup(f.group);
+
+      const dataset = (await fetchReportCached()).data;
+      const summary = buildSummaryFromRows(dataset.rows || []);
+
+      const { pct, text } = await computeHoursPct(summary.hours_total || 0);
+      setKpis(summary.hours_total || 0, pct, text);
+      renderInsightsFromSummaryObject(summary);
+    }
+
+    async function showAuthors(){
+      setActiveTab(tabAuthors);
+      hideAllViews();
+      updateCsvHrefAndRange();
+
+      const f = filtersObj();
+      if (!f){ authorsWrap.style.display='none'; kpis.style.display='none'; metaEl.textContent='Wybierz sprint i zespół…'; updateSprintTile(); return; }
+
+      await loadMembersDirectoryForGroup(f.group);
+
+      const dataset = (await fetchReportCached()).data;
+      renderAuthorsFromRows(dataset.rows||[]);
+
+      const { pct, text } = await computeHoursPct(dataset.hours_total || 0);
+      setKpis(dataset.hours_total || 0, pct, text);
+    }
+
+    /* ====== AUTHORS: grouping by Issue & sorting by hours desc ====== */
+    function groupRowsByIssue(rows){
+      const map = new Map();
+      for (const r of rows){
+        const key = r.issue_key || '(?)';
+        const project = (key.split('-')[0] || '(?)').toUpperCase();
+        const started = (r.started || '');
+        const hrs = (r.time_spent_seconds || 0) / 3600;
+
+        if (!map.has(key)){
+          map.set(key, { key, project, summary: r.issue_summary || '', hours: 0, lastStarted: started });
+        }
+        const it = map.get(key);
+        it.hours += hrs;
+        if (started > (it.lastStarted || '')) it.lastStarted = started;
+      }
+      return Array.from(map.values()).sort((a,b)=>{
+        const d = b.hours - a.hours;
+        if (d !== 0) return d;
+        return (b.lastStarted || '').localeCompare(a.lastStarted || '');
+      });
+    }
+
+    function renderAuthorsFromRows(rows){
+      const byAuthorKey = new Map();
+      for (const r of rows){
+        const k = String(r.author_email || r.author_account_id || '(?)').toLowerCase();
+        if (!byAuthorKey.has(k)) byAuthorKey.set(k, []);
+        byAuthorKey.get(k).push(r);
+      }
+      const stats = [];
+      for (const [authorKey, list] of byAuthorKey.entries()){
+        const sum = list.reduce((s,it)=>s+(it.time_spent_seconds||0),0)/3600;
+        stats.push({authorKey,sum,list});
+      }
+      stats.sort((a,b)=>b.sum-a.sum);
+
+      const wrap = authorsWrap; wrap.innerHTML='';
+      for (const {authorKey,sum,list} of stats){
+        const authorName = resolveDisplayName(authorKey);
+        const main = [], worklog = [];
+        for (const it of list){
+          const project = (it.issue_key||'').split('-')[0].toUpperCase();
+          (project==='WORKLOG'?worklog:main).push(it);
+        }
+
+        const mainAgg = groupRowsByIssue(main);
+        const worklogAgg = groupRowsByIssue(worklog);
+
+        const sumLeft  = mainAgg.reduce((s,it)=>s+it.hours,0);
+        const sumRight = worklogAgg.reduce((s,it)=>s+it.hours,0);
+
+        const block = document.createElement('div');
+        block.className='author-block';
+        block.innerHTML = `
+          <div class="author-head">
+            <div class="author-name">${authorName}</div>
+            <div class="author-sub">Łącznie: <b>${Math.round(sum)} h</b> • Główne projekty: ${Math.round(sumLeft)} h • WORKLOG: ${Math.round(sumRight)} h</div>
+          </div>
+          <div class="author-grid">
+            <div>
+              <div class="table-title">Główne projekty</div>
+              <div class="table-card"><div class="scroll">
+                <table>
+                  <thead><tr><th>Project</th><th>Issue</th><th>Summary</th><th>Hours</th></tr></thead>
+                  <tbody>
+                    ${mainAgg.map(it=>{
+                      return `<tr>
+                        <td class="nowrap">${it.project}</td>
+                        <td class="nowrap"><a class="link" href="/redirect?key=${encodeURIComponent(it.key)}" target="_blank">${it.key}</a></td>
+                        <td>${it.summary || ''}</td>
+                        <td class="nowrap" style="text-align:right; font-variant-numeric:tabular-nums">${Math.round(it.hours)}</td>
+                      </tr>`;
+                    }).join('')}
+                  </tbody>
+                </table>
+              </div></div>
+            </div>
+            <div>
+              <div class="table-title">WORKLOG</div>
+              <div class="table-card"><div class="scroll">
+                <table>
+                  <thead><tr><th>Issue</th><th>Summary</th><th>Hours</th></tr></thead>
+                  <tbody>
+                    ${worklogAgg.map(it=>{
+                      return `<tr>
+                        <td class="nowrap"><a class="link" href="/redirect?key=${encodeURIComponent(it.key)}" target="_blank">${it.key}</a></td>
+                        <td>${it.summary || ''}</td>
+                        <td class="nowrap" style="text-align:right; font-variant-numeric:tabular-nums">${Math.round(it.hours)}</td>
+                      </tr>`;
+                    }).join('')}
+                  </tbody>
+                </table>
+              </div></div>
+            </div>
+          </div>
+        `;
+        wrap.appendChild(block);
+      }
+      authorsWrap.style.display='block';
+      metaEl.textContent = `Autorzy (OK) — ${stats.length} osób`;
+    }
+
+    /* ======== SPRINT PICKER (logic) ======== */
+    const MONTH_NAMES_PL = ['Styczeń','Luty','Marzec','Kwiecień','Maj','Czerwiec','Lipiec','Sierpień','Wrzesień','Październik','Listopad','Grudzień'];
+    const spModal = document.getElementById('sprintPickerModal');
+    const spYearGrid = document.getElementById('spYearGrid');
+    const btnOpenSP = document.getElementById('openSprintPicker');
+    const btnCloseSP = document.getElementById('spClose');
+
+    function parseDMY(dmy){ const [d,m,y] = dmy.split('/').map(Number); return new Date(Date.UTC(y,m-1,d)); }
+    function monthDaysCount(year, monthIdx){ return new Date(Date.UTC(year, monthIdx+1, 0)).getUTCDate(); }
+
+    function openSprintPicker(){
+      buildSprintYearView();
+      spModal.hidden = false;
+      btnCloseSP.focus();
+    }
+    function closeSprintPicker(){ spModal.hidden = true; }
+
+    btnOpenSP.addEventListener('click', openSprintPicker);
+    btnCloseSP.addEventListener('click', closeSprintPicker);
+    spModal.addEventListener('click', (e)=>{ if (e.target.hasAttribute('data-close')) closeSprintPicker(); });
+    document.addEventListener('keydown', (e)=>{ if (e.key === 'Escape' && !spModal.hidden) closeSprintPicker(); });
+
+    function chooseSprint(index){
+      const presetEl = document.getElementById('sprintPreset');
+      presetEl.value = String(index);
+      closeSprintPicker();
+      onFiltersChanged();
+    }
+
+    function buildSprintYearView(){
+      const first = parseDMY(sprintPresets[0].start);
+      const year = first.getUTCFullYear();
+
+      spYearGrid.innerHTML = '';
+      for (let month = 0; month < 12; month++){
+        const monthBox = document.createElement('div');
+        monthBox.className = 'sp-month';
+
+        const monthDays = monthDaysCount(year, month);
+        const header = document.createElement('h4');
+        header.textContent = MONTH_NAMES_PL[month];
+        monthBox.appendChild(header);
+
+        const row = document.createElement('div');
+        row.className = 'sp-row';
+        row.dataset.monthDays = String(monthDays);
+
+        for (let d = 1; d <= 31; d++){
+          const cell = document.createElement('div');
+          cell.className = 'sp-day';
+          if (d > monthDays) cell.style.opacity = .15;
+          row.appendChild(cell);
+        }
+
+        sprintPresets.forEach((sp, idx)=>{
+          const s = parseDMY(sp.start);
+          const e = parseDMY(sp.end);
+          const monthStart = new Date(Date.UTC(year, month, 1));
+          const monthEnd   = new Date(Date.UTC(year, month, monthDays));
+
+          const overlaps = !(e < monthStart || s > monthEnd);
+          if (!overlaps) return;
+
+          const fromDay = (s > monthStart ? s.getUTCDate() : 1);
+          const toDay   = (e < monthEnd   ? e.getUTCDate() : monthDays);
+
+          const sprintEl = document.createElement('button');
+          sprintEl.type = 'button';
+          sprintEl.className = 'sp-sprint';
+          sprintEl.style.left = `calc(((100% - ${31-1}*2px) / 31) * ${fromDay-1} + ${fromDay>1 ? (fromDay-1)*2 : 0}px)`;
+          sprintEl.style.width = `calc(((100% - ${31-1}*2px) / 31) * ${(toDay - fromDay + 1)} + ${(toDay - fromDay)*2}px)`;
+
+          sprintEl.setAttribute('title', `Sprint ${sp.code}: ${sp.start} – ${sp.end}`);
+          sprintEl.innerHTML = `<span class="sp-tag">S ${sp.code}</span>`;
+          sprintEl.addEventListener('click', ()=>chooseSprint(idx));
+
+          if (String(document.getElementById('sprintPreset').value) === String(idx)){
+            sprintEl.dataset.selected = 'true';
+          }
+
+          row.appendChild(sprintEl);
+        });
+
+        monthBox.appendChild(row);
+        spYearGrid.appendChild(monthBox);
+      }
+    }
+
+    /* ============ EVENTS ============ */
+    async function onFiltersChanged(){
+      reportCache.clear();
+      const g = document.getElementById('groupSelect').value;
+      if (g) { await loadMembersDirectoryForGroup(g); }
+      updateCsvHref();
+      updateSprintTile();
+      const topActive = topTasksPanel && topTasksPanel.style.display !== 'none';
+      if (topActive){
+        await showTopTasks();
+      } else {
+        await showSummary();
+      }
+    }
+    document.getElementById('groupSelect').addEventListener('change', onFiltersChanged);
+    presetEl.addEventListener('change', onFiltersChanged);
+
+    // 🔧 POPRAWIONY REFRESH: czekamy na POST, nadpisujemy CSV, czyścimy cache, czytamy z CSV
+    document.getElementById('refresh').addEventListener('click', async (e)=>{
+  e.preventDefault();
+  const f = filtersObj();
+  if (f){
+    const btn = e.currentTarget;
+    try{
+      btn.setAttribute('aria-disabled','true');
+      btn.dataset.disabled = 'true';
+      setLoading(true);
+      metaEl.textContent = 'Odświeżanie… pobieram z JIRA i nadpisuję CSV';
+
+      // wyczyść cache danych dla bieżących filtrów
+      reportCache.delete(filtersKey(f));
+
+      // czekaj aż serwer zsynchronizuje i ZAPISZE CSV
+      const q = new URLSearchParams({from:f.from, to:f.to, group:f.group}).toString();
+      const resp = await fetch('/api/refresh-cache?' + q, { method:'POST' });
+      if (!resp.ok){
+        const err = await resp.json().catch(()=>({message:'Unknown error'}));
+        throw new Error(err.message || resp.statusText);
+      }
+
+      // 🔸 kluczowy moment: podbij wersję, żeby URL-e były nowe
+      csvVersion++;
+      reportCache.clear();
+      updateCsvHref(); // zaktualizuj link do CSV
+
+    } catch(err){
+      metaEl.textContent = 'Błąd odświeżania: ' + (err?.message || String(err));
+    } finally {
+      btn.removeAttribute('aria-disabled');
+      btn.dataset.disabled = 'false';
+      setLoading(false);
+    }
+  }
+
+  // przeładuj aktywny widok – teraz trafi w świeży CSV (inny URL)
+  const topActive = topTasksPanel && topTasksPanel.style.display !== 'none';
+  const active = [tabSummary, tabAuthors, tabTable].find(b=>b.getAttribute('aria-selected')==='true');
+  if (topActive) await showTopTasks();
+  else if (active===tabAuthors) await showAuthors();
+  else if (active===tabTable) await showTable();
+  else await showSummary();
+});
+
+
+    const csvLinkEl = document.getElementById('csvLink');
+if (csvLinkEl){
+  csvLinkEl.addEventListener('click', (e)=>{
+    if (e.currentTarget.dataset.disabled==='true'){ e.preventDefault(); }
+  });
+}
+
+    tabTable.addEventListener('click', showTable);
+    tabSummary.addEventListener('click', showSummary);
+    tabAuthors.addEventListener('click', showAuthors);
+
+    async function init(){
+      const res = await fetch('/api/groups');
+      const groups = await res.json();
+      const el = document.getElementById('groupSelect');
+      el.innerHTML = '<option value="">👥 Wybierz zespół…</option>';
+      groups.forEach(g=>{
+        const opt = document.createElement('option');
+        opt.value = g.label;
+        opt.textContent = g.label;
+        el.appendChild(opt);
+      });
+
+      updateCsvHref();
+      setActiveTab(tabSummary);
+      updateSprintTile();
+    }
+    init();
+  </script>
+</body>
+</html>
