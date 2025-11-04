@@ -308,7 +308,23 @@
     .author-block{ padding:14px; border:1px solid var(--border); border-radius:var(--radius); margin-bottom:12px; background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)) }
     .author-head{ display:flex; justify-content:space-between; gap:8px; align-items:baseline; margin-bottom:8px }
     .author-name{ font-weight:900; letter-spacing:.2px }
-    .author-sub{ color:var(--subtext); font-size:12px; }
+    .author-sub{ color:var(--subtext); font-size:12px; display:flex; flex-wrap:wrap; gap:8px; }
+    .author-sub b{ color:var(--text); }
+    .author-sub .sub-pill{ display:inline-flex; align-items:center; gap:4px; }
+    .author-sub .sub-pill.worklog{ transition: color .2s ease; }
+    .author-sub .sub-pill.worklog.danger{ color: var(--danger); }
+    .author-sub .sub-pill.worklog.danger b{ color: var(--danger); }
+    .author-sub .sub-pill.worklog.danger::after{
+      content:'';
+      display:inline-block;
+      width:6px; height:6px; border-radius:999px;
+      background: var(--danger);
+      animation: blink 1.2s infinite ease-in-out;
+    }
+    @keyframes blink{
+      0%, 100% { opacity:1; transform:scale(1); }
+      50% { opacity:.4; transform:scale(.8); }
+    }
     .author-grid{ display:grid; gap:12px; grid-template-columns:1fr 1fr }
     @media (max-width: 900px){ .author-grid{ grid-template-columns:1fr } }
     .table-title{ font-weight:800; margin:6px 0 }
@@ -1314,10 +1330,15 @@ function hideAllViews(){
 
         const block = document.createElement('div');
         block.className='author-block';
+        const worklogDanger = sumRight > sumLeft;
         block.innerHTML = `
           <div class="author-head">
             <div class="author-name">${authorName}</div>
-            <div class="author-sub">Łącznie: <b>${Math.round(sum)} h</b> • Główne projekty: ${Math.round(sumLeft)} h • WORKLOG: ${Math.round(sumRight)} h</div>
+            <div class="author-sub">
+              <span class="sub-pill">Łącznie: <b>${Math.round(sum)} h</b></span>
+              <span class="sub-pill">Główne projekty: ${Math.round(sumLeft)} h</span>
+              <span class="sub-pill worklog ${worklogDanger ? 'danger' : ''}">WORKLOG: <b>${Math.round(sumRight)} h</b></span>
+            </div>
           </div>
           <div class="author-grid">
             <div>
