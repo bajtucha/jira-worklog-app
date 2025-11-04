@@ -1191,10 +1191,15 @@ app.get('/api/sprint-top', async (req, res) => {
             issue_key: issueKey,
             issue_summary: String(r.issue_summary || ''),
             status: String(r.status || ''),
+            description: String(r.issue_description || r['issue_description'] || ''),
             seconds: 0
           });
         }
         agg.get(issueKey).seconds += sec;
+        const ref = agg.get(issueKey);
+        if (!ref.description) {
+          ref.description = String(r.issue_description || r['issue_description'] || ref.description || '');
+        }
       }
 
       const buildItems = (thresholdSeconds) => Array.from(agg.values())
@@ -1205,6 +1210,7 @@ app.get('/api/sprint-top', async (req, res) => {
           issue_key: x.issue_key,
           issue_summary: x.issue_summary,
           status: x.status,
+          description: x.description,
           hours: hoursFromSeconds(x.seconds),
           url: `/redirect?key=${encodeURIComponent(x.issue_key)}`
         }));

@@ -211,21 +211,27 @@
     .card .value .value-primary{ font-size:inherit; font-weight:inherit; letter-spacing:inherit }
     .card .sub{ color:var(--subtext); font-size:12px; margin-top:8px }
     .chip-btn{
-      border:1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.01));
-      color:var(--text);
+      border:1px solid rgba(250,204,21,.65);
+      background: linear-gradient(180deg, #fef08a, #facc15);
+      color:#1f2937;
       padding:6px 12px;
       border-radius:999px;
       font-size:12px;
       font-weight:600;
       cursor:pointer;
-      transition: transform .12s ease, filter .12s ease;
+      box-shadow: 0 6px 14px rgba(250,204,21,.25);
+      transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
     }
-    .chip-btn:hover:not([disabled]){ transform: translateY(-1px); filter: brightness(1.05) }
+    .chip-btn:hover:not([disabled]){
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(250,204,21,.35);
+      filter: brightness(1.03);
+    }
     .chip-btn[aria-expanded="true"]{
-      background: var(--primary-ghost);
-      border-color: rgba(59,130,246,.4);
-      color: var(--accent);
+      background: linear-gradient(180deg, #facc15, #eab308);
+      border-color: rgba(234,179,8,.8);
+      color:#1f2937;
+      box-shadow: 0 0 0 2px rgba(250,204,21,.3) inset, 0 8px 20px rgba(234,179,8,.3);
     }
     .chip-btn:disabled{ opacity:.5; cursor:not-allowed }
 
@@ -262,6 +268,16 @@
     .muted{ color:var(--subtext) }
     .link{ color:var(--accent); text-decoration:none; font-weight:600 }
     .link:hover{ text-decoration:underline }
+    .top-task-row .top-summary{ font-weight:600; line-height:1.35; }
+    .top-task-row .top-desc-inline{
+      margin-top:4px;
+      font-size:12px;
+      color:var(--subtext);
+      line-height:1.45;
+      max-height:5.1em;
+      overflow:hidden;
+      white-space:normal;
+    }
 
     /* ============================== */
     /*             TILES              */
@@ -610,25 +626,36 @@ async function loadTopTasks(sprintOverride) {
     }
 
     topWrap.innerHTML = data.results.map(team => {
+      const teamLabelSafe = escapeHtml(team.team_label || '');
+      const sourceFileSafe = escapeHtml(team.source_file || '');
       const minBadge = team.min_hours_used && team.min_hours_used !== data.minh
         ? `<span class="chip" title="Próg obniżony z ${data.minh}h">≥ ${team.min_hours_used}h</span>`
         : '';
-      const rows = team.items.map(it => `
-        <tr>
-          <td class="nowrap"><a class="link" href="${it.url}" target="_blank" rel="noopener">${it.issue_key}</a></td>
-          <td>${(it.issue_summary || '').replace(/</g,'&lt;')}</td>
-          <td class="nowrap" style="text-align:center">${it.status || ''}</td>
-          <td class="nowrap" style="text-align:right; font-variant-numeric: tabular-nums">${it.hours}h</td>
-        </tr>
-      `).join('');
+      const rows = team.items.map(it => {
+        const summarySafe = escapeHtml(it.issue_summary || '');
+        const statusSafe = escapeHtml(it.status || '');
+        const descRaw = truncate(it.description || '', 360, true);
+        const descHtml = descRaw ? escapeHtml(descRaw).replace(/\n/g,'<br>') : '';
+        return `
+          <tr class="top-task-row">
+            <td class="nowrap"><a class="link" href="${it.url}" target="_blank" rel="noopener">${escapeHtml(it.issue_key || '')}</a></td>
+            <td>
+              <div class="top-summary">${summarySafe}</div>
+              ${descHtml ? `<div class="top-desc-inline">${descHtml}</div>` : ''}
+            </td>
+            <td class="nowrap" style="text-align:center">${statusSafe}</td>
+            <td class="nowrap" style="text-align:right; font-variant-numeric: tabular-nums">${it.hours}h</td>
+          </tr>
+        `;
+      }).join('');
 
       return `
         <div class="table-card">
           <div style="display:flex; justify-content:space-between; align-items:center; padding:12px; border-bottom:1px solid var(--border);">
             <div style="font-weight:800; display:flex; gap:8px; align-items:center;">
-              <span>${team.team_label}</span>${minBadge}
+              <span>${teamLabelSafe}</span>${minBadge}
             </div>
-            <div class="muted" style="font-size:12px">${team.source_file}</div>
+            <div class="muted" style="font-size:12px">${sourceFileSafe}</div>
           </div>
           <div class="scroll">
             <table>
@@ -1021,9 +1048,20 @@ importFile.addEventListener('change', async ()=>{
     }
 
     const li = (name, hours) => `<li><span class="item-name" title="${name}">${name}</span><span class="item-hours">${Math.round(hours)} h</span></li>`;
-    const truncate = (text, max=260) => {
+    const escapeHtml = (str='') => String(str)
+      .replace(/&/g,'&amp;')
+      .replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;')
+      .replace(/'/g,'&#039;');
+    const truncate = (text, max=260, preserveBreaks=false) => {
       if (!text) return '';
-      const t = String(text).replace(/\s+/g,' ').trim();
+      let t = String(text).replace(/\r\n/g,'\n');
+      if (preserveBreaks){
+        t = t.split('\n').map(part=>part.trim()).filter(Boolean).join('\n');
+      } else {
+        t = t.replace(/\s+/g,' ').trim();
+      }
       return t.length > max ? t.slice(0, max-1) + '…' : t;
     };
     const isOkStatus = (s) => /(^|\s)(done|completed)(\s|$)/i.test(String(s || ''));
@@ -1048,6 +1086,10 @@ importFile.addEventListener('change', async ()=>{
             const hours = Math.round(i.hours||0);
             const ok = isOkStatus(i.status);
             const authorsClean = (i.authors||'').split(',').map(x=>resolveDisplayName(x.trim())).filter(Boolean);
+            const summarySafe = escapeHtml(i.summary || '');
+            const statusSafe = escapeHtml(i.status || '');
+            const descText = withDesc ? truncate(i.description || '', 600, true) : '';
+            const descHtml = descText ? escapeHtml(descText).replace(/\n/g,'<br>') : '';
             return `
             <li class="top-item">
               <div class="top-row">
@@ -1057,13 +1099,13 @@ importFile.addEventListener('change', async ()=>{
                 <div class="top-hours">${hours} h</div>
               </div>
               <div class="top-sub">
-                <span>${i.summary || ''}</span>
-                <span class="status-badge ${ok ? 'ok' : ''}">${i.status || ''}</span>
+                <span>${summarySafe}</span>
+                <span class="status-badge ${ok ? 'ok' : ''}">${statusSafe}</span>
               </div>
-              ${withDesc && i.description ? `<div class="top-desc">${truncate(i.description, 600)}</div>` : ''}
+              ${withDesc && descHtml ? `<div class="top-desc">${descHtml}</div>` : ''}
               ${withDesc && authorsClean.length
                 ? `<div class="chips">${
-                    authorsClean.slice(0,8).map(a=>`<span class="chip">${a}</span>`).join('')
+                    authorsClean.slice(0,8).map(a=>`<span class="chip">${escapeHtml(a)}</span>`).join('')
                   }${authorsClean.length>8?`<span class="chip">+${authorsClean.length-8}</span>`:''}</div>`
                 : ''}
             </li>`;
