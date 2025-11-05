@@ -277,6 +277,54 @@
       max-height:5.1em;
       overflow:hidden;
       white-space:normal;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      width:100%;
+    }
+    .top-meta{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin:0 0 8px 0;
+      flex-wrap:wrap;
+    }
+    .top-meta .meta{
+      margin:0;
+      flex:1 1 auto;
+    }
+    .copy-btn{
+      border:1px solid rgba(148,163,184,.4);
+      background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(148,163,184,.12));
+      color:var(--text);
+      padding:6px 14px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:600;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      cursor:pointer;
+      transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
+      white-space:nowrap;
+    }
+    .copy-btn:hover:not([disabled]){
+      transform: translateY(-1px);
+      filter:brightness(1.05);
+      box-shadow:0 6px 16px rgba(148,163,184,.2);
+    }
+    .copy-btn:disabled{ opacity:.5; cursor:not-allowed }
+    .copy-btn.copy-success{
+      background: var(--ok-grad);
+      border-color: rgba(34,197,94,.45);
+      color:#0f172a;
+      box-shadow:0 6px 18px rgba(34,197,94,.28);
+    }
+    .copy-btn.copy-error{
+      background: var(--danger-grad);
+      border-color: rgba(239,68,68,.55);
+      color:#fff;
+      box-shadow:0 6px 18px rgba(239,68,68,.28);
     }
 
     /* ============================== */
@@ -314,7 +362,17 @@
     .status-badge{ background:var(--badge); border:1px solid var(--border); padding:3px 10px; border-radius:999px; font-size:12px; font-weight:700 }
     .status-badge.ok{ color:#fff; background:var(--ok-grad); border-color:rgba(22,163,74,.5); }
 
-    .top-desc{ color:var(--subtext); white-space:normal; overflow:visible; display:block; line-height:1.55; max-height:none; }
+    .top-desc{
+      color:var(--subtext);
+      white-space:normal;
+      overflow:visible;
+      display:block;
+      line-height:1.55;
+      max-height:none;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      width:100%;
+    }
     .chips{ display:flex; flex-wrap:wrap; gap:6px; justify-content:flex-start; margin-top:4px }
     .chip{ font-size:11px; padding:3px 10px; border-radius:999px; background:var(--badge); border:1px solid var(--border); color:var(--subtext); }
 
@@ -535,7 +593,10 @@
 
       <!-- TOP TASKS PANEL -->
       <div id="topTasksPanel" class="content" style="display:none">
-        <div id="topTasksInfo" class="meta" style="margin:0 0 8px 0"></div>
+        <div class="top-meta">
+          <div id="topTasksInfo" class="meta"></div>
+          <button id="topTasksCopy" class="copy-btn" type="button" disabled title="Skopiuj tekst do Zoho Cliq">📋 Kopiuj</button>
+        </div>
         <div id="topTasksWrap" style="display:grid; gap:12px;"></div>
       </div>
     </div>
@@ -590,6 +651,55 @@ const btnTopTasks   = document.getElementById('topTasksToggle');
 const topTasksPanel = document.getElementById('topTasksPanel');
 const topInfo       = document.getElementById('topTasksInfo');
 const topWrap       = document.getElementById('topTasksWrap');
+const topCopyBtn    = document.getElementById('topTasksCopy');
+let lastTopTasksPayload = null;
+
+function hasCopyableTopTasks(payload){
+  return payload && Array.isArray(payload.results) && payload.results.some(team => Array.isArray(team.items) && team.items.length);
+}
+
+function resetTopCopyButton(){
+  if (!topCopyBtn) return;
+  topCopyBtn.classList.remove('copy-success','copy-error');
+  const canCopy = hasCopyableTopTasks(lastTopTasksPayload);
+  topCopyBtn.disabled = !canCopy;
+  topCopyBtn.textContent = '📋 Kopiuj';
+}
+
+async function copyTopTasksToClipboard(){
+  if (!topCopyBtn || !hasCopyableTopTasks(lastTopTasksPayload)) return;
+  const text = formatTopTasksForCliq(lastTopTasksPayload);
+  if (!text) return;
+  try{
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      await navigator.clipboard.writeText(text);
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly','true');
+      ta.style.position='absolute';
+      ta.style.left='-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    topCopyBtn.classList.remove('copy-error');
+    topCopyBtn.classList.add('copy-success');
+    topCopyBtn.textContent = 'Skopiowano!';
+  } catch(err){
+    console.error('copy top tasks failed', err);
+    topCopyBtn.classList.remove('copy-success');
+    topCopyBtn.classList.add('copy-error');
+    topCopyBtn.textContent = 'Błąd kopiowania';
+  } finally {
+    setTimeout(resetTopCopyButton, 2000);
+  }
+}
+
+if (topCopyBtn){
+  topCopyBtn.addEventListener('click', copyTopTasksToClipboard);
+}
 
 async function loadTopTasks(sprintOverride) {
   const sprint = sprintOverride || sprintObj();
@@ -599,11 +709,15 @@ async function loadTopTasks(sprintOverride) {
   if (!sprint) {
     topInfo.textContent = 'Wybierz sprint, aby zobaczyć top zadania dla wszystkich zespołów.';
     topWrap.innerHTML = '';
+    lastTopTasksPayload = null;
+    resetTopCopyButton();
     return;
   }
 
   topInfo.textContent = 'Ładuję…';
   topWrap.innerHTML = '';
+  lastTopTasksPayload = null;
+  resetTopCopyButton();
 
   try {
     if (btnTopTasks) {
@@ -622,9 +736,12 @@ async function loadTopTasks(sprintOverride) {
 
     if (!data.results.length) {
       topWrap.innerHTML = '<div class="muted" style="opacity:.8">Brak zadań spełniających warunki (≥16h, bez WORKLOG) lub brak CSV u zespołów.</div>';
+      lastTopTasksPayload = data;
+      resetTopCopyButton();
       return;
     }
 
+    lastTopTasksPayload = data;
     topWrap.innerHTML = data.results.map(team => {
       const teamLabelSafe = escapeHtml(team.team_label || '');
       const sourceFileSafe = escapeHtml(team.source_file || '');
@@ -672,10 +789,13 @@ async function loadTopTasks(sprintOverride) {
           </div>
         </div>`;
     }).join('');
+    resetTopCopyButton();
   } catch (e) {
     console.error(e);
     topInfo.textContent = 'Błąd ładowania.';
     topWrap.innerHTML = `<pre style="white-space:pre-wrap; background:rgba(239,68,68,.1); border:1px solid var(--border); padding:8px;">${(e && e.message) || e}</pre>`;
+    lastTopTasksPayload = null;
+    resetTopCopyButton();
   } finally {
     if (btnTopTasks) {
       btnTopTasks.removeAttribute('aria-busy');
@@ -1067,6 +1187,50 @@ importFile.addEventListener('change', async ()=>{
       return t.length > max ? t.slice(0, max-1) + '…' : t;
     };
     const isOkStatus = (s) => /(^|\s)(done|completed)(\s|$)/i.test(String(s || ''));
+
+    function formatTopTasksForCliq(payload){
+      if (!hasCopyableTopTasks(payload)) return '';
+      const lines = [];
+      lines.push('**Top tasks — globalne zestawienie sprintu**');
+      lines.push(`\`${payload.from} → ${payload.to}\``);
+      if (payload.teams_with_fallback){
+        lines.push(`_Fallback ≥ ${payload.fallback_min}h dla ${payload.teams_with_fallback} zespołów_`);
+      }
+      lines.push('');
+
+      for (const team of payload.results){
+        if (!team || !Array.isArray(team.items) || !team.items.length) continue;
+        const minHours = Math.round(team.min_hours_used || payload.minh || 0);
+        const teamLine = `**${team.team_label || '(?)'}** (≥ ${minHours}h)`;
+        lines.push(teamLine);
+        for (const item of team.items){
+          if (!item) continue;
+          const hours = Math.round(item.hours || 0);
+          const key = item.issue_key || '';
+          const summary = item.issue_summary ? item.issue_summary.trim() : '';
+          const status = (item.status || '').trim();
+          const keyMarkup = key ? `\`${key}\`` : '';
+
+          const taskLineParts = [
+            key ? `• ${keyMarkup}` : '•',
+            summary ? `${summary}` : '',
+            `— **${hours}h**`,
+            status ? `_(${status})_` : ''
+          ].filter(Boolean);
+          lines.push(taskLineParts.join(' ').replace(/\s+/g,' ').trim());
+
+          const desc = truncate(item.description || '', 240, true);
+          if (desc){
+            desc.split('\n').map(d=>d.trim()).filter(Boolean).forEach(line=>{
+              lines.push(`  > ${line}`);
+            });
+          }
+        }
+        lines.push('');
+      }
+
+      return lines.join('\n').replace(/\n{3,}/g,'\n\n').trim();
+    }
 
    function renderInsightsFromSummaryObject(s){
   metaEl.textContent = 'Podsumowanie (OK)';
